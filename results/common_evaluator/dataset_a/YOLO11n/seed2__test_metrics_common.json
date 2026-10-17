@@ -1,0 +1,54 @@
+{
+  "schema": "external_detection_metrics_v2",
+  "model": "YOLO11n",
+  "seed": 2,
+  "checkpoint": "<original-workspace>\\runs\\detect\\paper_groupaware_clean_v2_reruns\\dsA_groupaware_clean_aug_v2__scale__yolo11n__seed2\\weights\\best.pt",
+  "annotations": "<original-workspace>\\external_configs\\rtdetr_coco_annotations\\instances_test.json",
+  "predictions": "<original-workspace>\\runs\\common_eval\\paper16_unified_protocol\\yolo11n\\seed2__test_predictions_coco.json",
+  "split": "test",
+  "protocol": {
+    "imgsz": 640,
+    "prediction_confidence_floor": 0.001,
+    "nms_iou": 0.7,
+    "max_det": 300,
+    "coco_max_dets": [
+      1,
+      10,
+      300
+    ],
+    "small_area": "original-image area < 32^2 * 4 pixels"
+  },
+  "overall": {
+    "precision": 0.7706258890251615,
+    "recall": 0.7782945849620057,
+    "max_mean_f1": 0.774441253159888,
+    "confidence": 0.47100000000000003,
+    "definition": "macro class P/R at confidence maximizing mean class F1, class-aware IoU>=0.5",
+    "map50_95": 0.6401566110131864,
+    "map50": 0.7863667572276474,
+    "ap75": 0.7423120485901575,
+    "ap_small_area4": 0.5487349659104196,
+    "ar300": 0.7540933231413957
+  },
+  "per_class": {
+    "unripe": {
+      "ap50_95": 0.7034594968772903,
+      "ap50": 0.8810339772431811
+    },
+    "semi-ripe": {
+      "ap50_95": 0.535271545847671,
+      "ap50": 0.6566750358984665
+    },
+    "ripe": {
+      "ap50_95": 0.6817387903145983,
+      "ap50": 0.8213912585412944
+    }
+  },
+  "quality": {
+    "corr_score_iou_tp": 0.5181705135277778,
+    "ece_iou50": 0.0219497060585645,
+    "ece_bins": 15,
+    "predictions": 10530,
+    "true_positive_matches": 2513
+  }
+}

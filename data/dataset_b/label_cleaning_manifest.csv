@@ -1,0 +1,11 @@
+﻿group_id,file,legacy_split,class_relation,max_iou,candidate_lines,action,keep_line,removed_lines,note
+-162-_jpg.rf.d9d638f1c883e94ce23e7e0dd21626e9/G001,-162-_jpg.rf.d9d638f1c883e94ce23e7e0dd21626e9.jpg,train,same-class,0.971055,12 15,keep_one,12,15,No existing whole-fruit box found after all-label context review; user fallback decision L12.
+-249-_jpg.rf.6042d3f11f17eda7eb62c0706a5b08b0/G001,-249-_jpg.rf.6042d3f11f17eda7eb62c0706a5b08b0.jpg,train,same-class,1.0,7 11,keep_one,7,11,User-confirmed.
+IMG_20230519_130735_jpg.rf.32d4bba2defeb3a4653ce22d7aae6d6c/G001,IMG_20230519_130735_jpg.rf.32d4bba2defeb3a4653ce22d7aae6d6c.jpg,train,same-class,0.944444,3 5,keep_one,3,5,User-confirmed.
+IMG_20230621_114307_jpg.rf.ebdd27dd94768fba79f514d8cb8dbfc3/G001,IMG_20230621_114307_jpg.rf.ebdd27dd94768fba79f514d8cb8dbfc3.jpg,train,same-class,0.988889,7 12,keep_one,7,12,User-confirmed.
+IMG_20230621_114451_jpg.rf.ea335e9532b7cb8cffc78f6c1625b8bb/G001,IMG_20230621_114451_jpg.rf.ea335e9532b7cb8cffc78f6c1625b8bb.jpg,train,cross-class,0.973629,7 9,keep_one,7,9,No existing whole-fruit box found after all-label context review; user fallback decision L7 (half).
+IMG_20230621_115942_jpg.rf.e98304d11658457fb72f6cf3bc5ee1e0/G001,IMG_20230621_115942_jpg.rf.e98304d11658457fb72f6cf3bc5ee1e0.jpg,train,same-class,0.951613,7 8,keep_one,8,7,User-confirmed as L008.
+IMG_20230621_120150_jpg.rf.5c7478da15530792997feb737894ffa2/G001,IMG_20230621_120150_jpg.rf.5c7478da15530792997feb737894ffa2.jpg,train,same-class,1.0,4 5,keep_one,4,5,No existing whole-fruit box found after all-label context review; user fallback decision L4.
+Lychee_5029_jpg.rf.70a6550025d7308340cb63bf057b536e/G001,Lychee_5029_jpg.rf.70a6550025d7308340cb63bf057b536e.jpg,train,same-class,1.0,14 35,keep_one,14,35,User-confirmed.
+Lychee_5029_jpg.rf.70a6550025d7308340cb63bf057b536e/G002,Lychee_5029_jpg.rf.70a6550025d7308340cb63bf057b536e.jpg,train,same-class,1.0,15 39,keep_one,15,39,User-confirmed.
+-86-_jpg.rf.0cec0a373fa347a89eefcba4d35c8259/G001,-86-_jpg.rf.0cec0a373fa347a89eefcba4d35c8259.jpg,val,same-class,0.967415,1 2,keep_one,1,2,No existing whole-fruit box found after all-label context review; user fallback decision L1.

@@ -1,0 +1,555 @@
+{
+  "schema": "paper35_extended_statistics_v1",
+  "protocol": {
+    "test_images": 126,
+    "bootstrap_unit": "test image",
+    "bootstrap_type": "paired nonparametric percentile bootstrap",
+    "bootstrap_replicates": 10000,
+    "bootstrap_seed": 20260830,
+    "aggregation": "same bootstrap image multiplicities for both models and all three seeds; mean across seeds",
+    "COCO_maxDet": 300,
+    "IoU_error_confidence": 0.25,
+    "IoU_error_match_IoU": 0.5
+  },
+  "annotations": "<original-workspace>\\external_configs\\rtdetr_coco_annotations\\instances_test.json",
+  "inputs": {
+    "YOLO11n": [
+      "<original-workspace>\\runs\\common_eval\\paper16_unified_protocol\\yolo11n\\seed0__test_predictions_coco.json",
+      "<original-workspace>\\runs\\common_eval\\paper16_unified_protocol\\yolo11n\\seed1__test_predictions_coco.json",
+      "<original-workspace>\\runs\\common_eval\\paper16_unified_protocol\\yolo11n\\seed2__test_predictions_coco.json"
+    ],
+    "FSDH-YOLO": [
+      "<original-workspace>\\runs\\common_eval\\paper16_unified_protocol\\fsdconv_shab\\seed0__test_predictions_coco.json",
+      "<original-workspace>\\runs\\common_eval\\paper16_unified_protocol\\fsdconv_shab\\seed1__test_predictions_coco.json",
+      "<original-workspace>\\runs\\common_eval\\paper16_unified_protocol\\fsdconv_shab\\seed2__test_predictions_coco.json"
+    ]
+  },
+  "metrics": {
+    "mAP50-95": {
+      "YOLO11n_per_seed": [
+        0.6512031253637267,
+        0.6415100140799201,
+        0.6401566110131865
+      ],
+      "YOLO11n_mean": 0.6442899168189444,
+      "YOLO11n_sample_sd": 0.006025136036057495,
+      "FSDH_per_seed": [
+        0.6667047129671739,
+        0.6714047484462197,
+        0.680804102112989
+      ],
+      "FSDH_mean": 0.6729711878421275,
+      "FSDH_sample_sd": 0.007179031470684005,
+      "delta_per_seed": [
+        0.01550158760344722,
+        0.029894734366299525,
+        0.04064749109980248
+      ],
+      "delta_mean": 0.028681271023183075,
+      "delta_sample_sd": 0.012616793793425429,
+      "bootstrap_ci": [
+        0.01506105167672194,
+        0.0421458123272381
+      ],
+      "bootstrap_defined_replicates": 10000,
+      "bootstrap_positive_fraction": 1.0
+    },
+    "mAP50": {
+      "YOLO11n_per_seed": [
+        0.800680637796339,
+        0.7824642548553685,
+        0.7863667572276474
+      ],
+      "YOLO11n_mean": 0.7898372166264517,
+      "YOLO11n_sample_sd": 0.009591257383267425,
+      "FSDH_per_seed": [
+        0.8093113770574653,
+        0.8149990076388458,
+        0.8286605913063108
+      ],
+      "FSDH_mean": 0.8176569920008739,
+      "FSDH_sample_sd": 0.009944681174553613,
+      "delta_per_seed": [
+        0.00863073926112623,
+        0.03253475278347728,
+        0.042293834078663384
+      ],
+      "delta_mean": 0.0278197753744223,
+      "delta_sample_sd": 0.017319764638976717,
+      "bootstrap_ci": [
+        0.01178989921597425,
+        0.04512963635355331
+      ],
+      "bootstrap_defined_replicates": 10000,
+      "bootstrap_positive_fraction": 0.9998
+    },
+    "AP75": {
+      "YOLO11n_per_seed": [
+        0.7555948963937795,
+        0.7353309485307905,
+        0.7423120485901574
+      ],
+      "YOLO11n_mean": 0.7444126311715759,
+      "YOLO11n_sample_sd": 0.010293990049271616,
+      "FSDH_per_seed": [
+        0.7619286193019411,
+        0.7720539277900382,
+        0.7818792922181915
+      ],
+      "FSDH_mean": 0.7719539464367235,
+      "FSDH_sample_sd": 0.009975712238033929,
+      "delta_per_seed": [
+        0.0063337229081615876,
+        0.03672297925924772,
+        0.0395672436280341
+      ],
+      "delta_mean": 0.027541315265147803,
+      "delta_sample_sd": 0.018421290403632478,
+      "bootstrap_ci": [
+        0.01169224475427923,
+        0.04330552000292123
+      ],
+      "bootstrap_defined_replicates": 10000,
+      "bootstrap_positive_fraction": 0.9996
+    },
+    "AP_small@640eq": {
+      "YOLO11n_per_seed": [
+        0.559143328311884,
+        0.5482388434556938,
+        0.5487349659104196
+      ],
+      "YOLO11n_mean": 0.5520390458926658,
+      "YOLO11n_sample_sd": 0.00615748779061152,
+      "FSDH_per_seed": [
+        0.5757709353621007,
+        0.5696934718656859,
+        0.5964902724824374
+      ],
+      "FSDH_mean": 0.580651559903408,
+      "FSDH_sample_sd": 0.01404928833636749,
+      "delta_per_seed": [
+        0.01662760705021671,
+        0.021454628409992016,
+        0.047755306572017764
+      ],
+      "delta_mean": 0.028612514010742163,
+      "delta_sample_sd": 0.016752907630765267,
+      "bootstrap_ci": [
+        0.011764700857126918,
+        0.046974743417291846
+      ],
+      "bootstrap_defined_replicates": 10000,
+      "bootstrap_positive_fraction": 0.9994
+    },
+    "COCO AP_s": {
+      "YOLO11n_per_seed": [
+        0.34761897335995073,
+        0.4444915773815822,
+        0.36532885054272635
+      ],
+      "YOLO11n_mean": 0.38581313376141974,
+      "YOLO11n_sample_sd": 0.05158274659923301,
+      "FSDH_per_seed": [
+        0.32402113169309094,
+        0.37428334265691837,
+        0.41608921387342235
+      ],
+      "FSDH_mean": 0.3714645627411439,
+      "FSDH_sample_sd": 0.046098721015351875,
+      "delta_per_seed": [
+        -0.023597841666859798,
+        -0.07020823472466381,
+        0.050760363330696
+      ],
+      "delta_mean": -0.014348571020275869,
+      "delta_sample_sd": 0.06101239369579036,
+      "bootstrap_ci": [
+        -0.06263669863490028,
+        0.04243551519565835
+      ],
+      "bootstrap_defined_replicates": 10000,
+      "bootstrap_positive_fraction": 0.3436
+    },
+    "unripe AP50": {
+      "YOLO11n_per_seed": [
+        0.8773782843683732,
+        0.8603216479897601,
+        0.8810339772431812
+      ],
+      "YOLO11n_mean": 0.8729113032004382,
+      "YOLO11n_sample_sd": 0.011055115844781813,
+      "FSDH_per_seed": [
+        0.8898475914007345,
+        0.8881841768177535,
+        0.8988997012833957
+      ],
+      "FSDH_mean": 0.8923104898339612,
+      "FSDH_sample_sd": 0.005766716367460505,
+      "delta_per_seed": [
+        0.012469307032361376,
+        0.02786252882799345,
+        0.01786572404021447
+      ],
+      "delta_mean": 0.019399186633523097,
+      "delta_sample_sd": 0.0078103424992882475,
+      "bootstrap_ci": [
+        0.0059252763892579585,
+        0.03339171032909583
+      ],
+      "bootstrap_defined_replicates": 10000,
+      "bootstrap_positive_fraction": 0.9982
+    },
+    "unripe AP50-95": {
+      "YOLO11n_per_seed": [
+        0.7025318430389944,
+        0.6914573230626821,
+        0.7034594968772903
+      ],
+      "YOLO11n_mean": 0.6991495543263223,
+      "YOLO11n_sample_sd": 0.006677795427453445,
+      "FSDH_per_seed": [
+        0.7151751773423796,
+        0.715374337485448,
+        0.7161508987439833
+      ],
+      "FSDH_mean": 0.7155668045239368,
+      "FSDH_sample_sd": 0.0005155489637904664,
+      "delta_per_seed": [
+        0.012643334303385156,
+        0.023917014422765837,
+        0.012691401866693042
+      ],
+      "delta_mean": 0.01641725019761468,
+      "delta_sample_sd": 0.006495030808033434,
+      "bootstrap_ci": [
+        0.0038570371793066583,
+        0.029589381647558945
+      ],
+      "bootstrap_defined_replicates": 10000,
+      "bootstrap_positive_fraction": 0.9957
+    },
+    "unripe AP_small@640eq": {
+      "YOLO11n_per_seed": [
+        0.6209807928079483,
+        0.6134927579980906,
+        0.6258563893715221
+      ],
+      "YOLO11n_mean": 0.620109980059187,
+      "YOLO11n_sample_sd": 0.006227646531160798,
+      "FSDH_per_seed": [
+        0.6278173047440114,
+        0.622214897800864,
+        0.6310226598361129
+      ],
+      "FSDH_mean": 0.6270182874603295,
+      "FSDH_sample_sd": 0.004457913130839349,
+      "delta_per_seed": [
+        0.006836511936063161,
+        0.008722139802773476,
+        0.005166270464590839
+      ],
+      "delta_mean": 0.006908307401142492,
+      "delta_sample_sd": 0.0017790215370144696,
+      "bootstrap_ci": [
+        -0.01125325750766249,
+        0.03189759749774373
+      ],
+      "bootstrap_defined_replicates": 10000,
+      "bootstrap_positive_fraction": 0.7747
+    },
+    "unripe AP_non-small": {
+      "YOLO11n_per_seed": [
+        0.7768187290857832,
+        0.7598663294048463,
+        0.7784503920948167
+      ],
+      "YOLO11n_mean": 0.7717118168618153,
+      "YOLO11n_sample_sd": 0.010290882414237902,
+      "FSDH_per_seed": [
+        0.7913577517887143,
+        0.7950294042856442,
+        0.7888218951947034
+      ],
+      "FSDH_mean": 0.7917363504230206,
+      "FSDH_sample_sd": 0.003121024667148943,
+      "delta_per_seed": [
+        0.01453902270293106,
+        0.03516307488079784,
+        0.010371503099886659
+      ],
+      "delta_mean": 0.020024533561205187,
+      "delta_sample_sd": 0.013274924853806156,
+      "bootstrap_ci": [
+        0.003526643635746929,
+        0.03557645524649249
+      ],
+      "bootstrap_defined_replicates": 10000,
+      "bootstrap_positive_fraction": 0.9912
+    },
+    "semi-ripe AP50": {
+      "YOLO11n_per_seed": [
+        0.7182029647887204,
+        0.6929126068843809,
+        0.6566750358984667
+      ],
+      "YOLO11n_mean": 0.6892635358571894,
+      "YOLO11n_sample_sd": 0.030925851611591015,
+      "FSDH_per_seed": [
+        0.6911753722652259,
+        0.7078257974168249,
+        0.7062253095045596
+      ],
+      "FSDH_mean": 0.7017421597288701,
+      "FSDH_sample_sd": 0.009186029521273023,
+      "delta_per_seed": [
+        -0.027027592523494515,
+        0.014913190532443998,
+        0.04955027360609299
+      ],
+      "delta_mean": 0.012478623871680824,
+      "delta_sample_sd": 0.03834693900899433,
+      "bootstrap_ci": [
+        -0.01753317598976212,
+        0.04283962173691467
+      ],
+      "bootstrap_defined_replicates": 10000,
+      "bootstrap_positive_fraction": 0.7882
+    },
+    "semi-ripe AP50-95": {
+      "YOLO11n_per_seed": [
+        0.5861214396365011,
+        0.5730733934949772,
+        0.535271545847671
+      ],
+      "YOLO11n_mean": 0.5648221263263831,
+      "YOLO11n_sample_sd": 0.026410045096505696,
+      "FSDH_per_seed": [
+        0.5777451446888902,
+        0.592106182172121,
+        0.5913064569479457
+      ],
+      "FSDH_mean": 0.5870525946029855,
+      "FSDH_sample_sd": 0.008070400116232907,
+      "delta_per_seed": [
+        -0.00837629494761094,
+        0.019032788677143753,
+        0.0560349111002747
+      ],
+      "delta_mean": 0.022230468276602505,
+      "delta_sample_sd": 0.03232444480963889,
+      "bootstrap_ci": [
+        -0.003547617426060855,
+        0.04650769931093901
+      ],
+      "bootstrap_defined_replicates": 10000,
+      "bootstrap_positive_fraction": 0.9516
+    },
+    "semi-ripe AP_small@640eq": {
+      "YOLO11n_per_seed": [
+        0.44605124928671475,
+        0.4053762550354933,
+        0.4018843805448345
+      ],
+      "YOLO11n_mean": 0.4177706282890142,
+      "YOLO11n_sample_sd": 0.02455388848790177,
+      "FSDH_per_seed": [
+        0.44827171626285905,
+        0.4496945978758403,
+        0.4951455666099049
+      ],
+      "FSDH_mean": 0.4643706269162014,
+      "FSDH_sample_sd": 0.026661373424571623,
+      "delta_per_seed": [
+        0.0022204669761443085,
+        0.044318342840347025,
+        0.09326118606507039
+      ],
+      "delta_mean": 0.04659999862718724,
+      "delta_sample_sd": 0.04556322637724861,
+      "bootstrap_ci": [
+        0.009050609827612755,
+        0.08334995391371179
+      ],
+      "bootstrap_defined_replicates": 10000,
+      "bootstrap_positive_fraction": 0.9918
+    },
+    "semi-ripe AP_non-small": {
+      "YOLO11n_per_seed": [
+        0.6197176287851126,
+        0.6104634585406519,
+        0.5666945175390142
+      ],
+      "YOLO11n_mean": 0.5989585349549262,
+      "YOLO11n_sample_sd": 0.028321988482256512,
+      "FSDH_per_seed": [
+        0.6064996815719365,
+        0.6234221547301921,
+        0.6154186302492703
+      ],
+      "FSDH_mean": 0.6151134888504662,
+      "FSDH_sample_sd": 0.008465362242864687,
+      "delta_per_seed": [
+        -0.013217947213176151,
+        0.012958696189540264,
+        0.04872411271025612
+      ],
+      "delta_mean": 0.016154953895540076,
+      "delta_sample_sd": 0.03109448093121818,
+      "bootstrap_ci": [
+        -0.014281537105171887,
+        0.04381267350570452
+      ],
+      "bootstrap_defined_replicates": 10000,
+      "bootstrap_positive_fraction": 0.8437
+    },
+    "ripe AP50": {
+      "YOLO11n_per_seed": [
+        0.8064606642319233,
+        0.7941585096919648,
+        0.8213912585412942
+      ],
+      "YOLO11n_mean": 0.8073368108217275,
+      "YOLO11n_sample_sd": 0.013637498931541037,
+      "FSDH_per_seed": [
+        0.8469111675064352,
+        0.8489870486819591,
+        0.8808567631309769
+      ],
+      "FSDH_mean": 0.8589183264397905,
+      "FSDH_sample_sd": 0.01902757404409776,
+      "delta_per_seed": [
+        0.04045050327451194,
+        0.05482853898999429,
+        0.059465504589682694
+      ],
+      "delta_mean": 0.05158151561806298,
+      "delta_sample_sd": 0.009914632587110202,
+      "bootstrap_ci": [
+        0.03322121785908917,
+        0.0759411829238619
+      ],
+      "bootstrap_defined_replicates": 10000,
+      "bootstrap_positive_fraction": 1.0
+    },
+    "ripe AP50-95": {
+      "YOLO11n_per_seed": [
+        0.6649560934156845,
+        0.6599993256821012,
+        0.6817387903145982
+      ],
+      "YOLO11n_mean": 0.6688980698041279,
+      "YOLO11n_sample_sd": 0.011393220089692862,
+      "FSDH_per_seed": [
+        0.707193816870252,
+        0.7067337256810902,
+        0.7349549506470383
+      ],
+      "FSDH_mean": 0.7162941643994601,
+      "FSDH_sample_sd": 0.016162352196043058,
+      "delta_per_seed": [
+        0.042237723454567444,
+        0.046734399998988985,
+        0.05321616033244014
+      ],
+      "delta_mean": 0.04739609459533219,
+      "delta_sample_sd": 0.005519048729127255,
+      "bootstrap_ci": [
+        0.032642583631366864,
+        0.06531928230656911
+      ],
+      "bootstrap_defined_replicates": 10000,
+      "bootstrap_positive_fraction": 1.0
+    },
+    "ripe AP_small@640eq": {
+      "YOLO11n_per_seed": [
+        0.6103979428409887,
+        0.6258475173334976,
+        0.6184641278149021
+      ],
+      "YOLO11n_mean": 0.6182365293297961,
+      "YOLO11n_sample_sd": 0.007727301521405299,
+      "FSDH_per_seed": [
+        0.6512237850794313,
+        0.6371709199203532,
+        0.6633025910012944
+      ],
+      "FSDH_mean": 0.650565765333693,
+      "FSDH_sample_sd": 0.013078256797446683,
+      "delta_per_seed": [
+        0.040825842238442656,
+        0.011323402586855602,
+        0.044838463186392286
+      ],
+      "delta_mean": 0.032329236003896845,
+      "delta_sample_sd": 0.018301886784600818,
+      "bootstrap_ci": [
+        0.012202311761967405,
+        0.05449622244765997
+      ],
+      "bootstrap_defined_replicates": 10000,
+      "bootstrap_positive_fraction": 0.9996
+    },
+    "ripe AP_non-small": {
+      "YOLO11n_per_seed": [
+        0.6822669910015522,
+        0.6701013585218176,
+        0.6955168791958224
+      ],
+      "YOLO11n_mean": 0.682628409573064,
+      "YOLO11n_sample_sd": 0.012711614386873375,
+      "FSDH_per_seed": [
+        0.7227019544014442,
+        0.7242313643875868,
+        0.7562284741679222
+      ],
+      "FSDH_mean": 0.7343872643189844,
+      "FSDH_sample_sd": 0.018930494168812116,
+      "delta_per_seed": [
+        0.040434963399892054,
+        0.054130005865769215,
+        0.06071159497209977
+      ],
+      "delta_mean": 0.051758854745920346,
+      "delta_sample_sd": 0.010344187508143551,
+      "bootstrap_ci": [
+        0.03326277764371638,
+        0.07406671456378737
+      ],
+      "bootstrap_defined_replicates": 10000,
+      "bootstrap_positive_fraction": 1.0
+    },
+    "IoU localization error": {
+      "common_matches_per_seed": [
+        2166,
+        2120,
+        2211
+      ],
+      "YOLO11n_per_seed": [
+        0.0972873292322667,
+        0.09319406481421212,
+        0.09683700175739812
+      ],
+      "YOLO11n_mean": 0.09577279860129233,
+      "YOLO11n_sample_sd": 0.0022445711543916556,
+      "FSDH_per_seed": [
+        0.09313859098613908,
+        0.0927850130769825,
+        0.09589423357401486
+      ],
+      "FSDH_mean": 0.09393927921237881,
+      "FSDH_sample_sd": 0.001702245355852302,
+      "delta_per_seed": [
+        -0.004148738246127617,
+        -0.0004090517372296182,
+        -0.0009427681833832635
+      ],
+      "delta_mean": -0.0018335193889134997,
+      "delta_sample_sd": 0.0020227189816738266,
+      "bootstrap_ci": [
+        -0.0032037504510991624,
+        -0.0004850405134743536
+      ],
+      "bootstrap_negative_fraction": 0.9965
+    }
+  }
+}

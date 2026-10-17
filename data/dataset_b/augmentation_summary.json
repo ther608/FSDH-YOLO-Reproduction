@@ -1,0 +1,101 @@
+{
+  "schema": "dataset_b_groupaware_clean_v4_aug",
+  "source_raw": "<data-root>/data\\lichi-maturity\\lichi-maturity\\lichi_701515_groupaware_clean_v4_raw",
+  "output": "<data-root>/data\\lichi-maturity\\lichi-maturity\\lichi_701515_groupaware_clean_v4_aug",
+  "seed": 20260731,
+  "augmentation_scope": "train only",
+  "generation_rule": "each training original plus one independent variant from each of three categories",
+  "chained_augmentation": false,
+  "vertical_flip": false,
+  "raw_build_summary_sha256": "d5c060052451a9dc7a5d99b1f0a2ef080303082a86e10fdb4d6f9acef28050ab",
+  "augmentation_log_rows": 3213,
+  "category_counts": {
+    "illum_color": 1071,
+    "image_quality": 1071,
+    "mild_geometry": 1071
+  },
+  "operation_counts": {
+    "brightness_contrast": 534,
+    "gaussian_blur": 534,
+    "translation": 271,
+    "hsv_colour": 537,
+    "sensor_noise": 537,
+    "rotation": 273,
+    "scale": 256,
+    "horizontal_flip": 271
+  },
+  "raw_statistics": {
+    "train": {
+      "images": 1071,
+      "objects": 12935,
+      "empty_labels": 0,
+      "class_instances": {
+        "green": 3839,
+        "half": 765,
+        "red": 5288,
+        "young": 3043
+      }
+    },
+    "val": {
+      "images": 212,
+      "objects": 3267,
+      "empty_labels": 2,
+      "class_instances": {
+        "green": 970,
+        "half": 191,
+        "red": 1337,
+        "young": 769
+      }
+    },
+    "test": {
+      "images": 212,
+      "objects": 3263,
+      "empty_labels": 0,
+      "class_instances": {
+        "green": 970,
+        "half": 187,
+        "red": 1337,
+        "young": 769
+      }
+    }
+  },
+  "augmented_statistics": {
+    "train": {
+      "images": 4284,
+      "objects": 51728,
+      "empty_labels": 0,
+      "class_instances": {
+        "green": 15355,
+        "half": 3060,
+        "red": 21145,
+        "young": 12168
+      }
+    },
+    "val": {
+      "images": 212,
+      "objects": 3267,
+      "empty_labels": 2,
+      "class_instances": {
+        "green": 970,
+        "half": 191,
+        "red": 1337,
+        "young": 769
+      }
+    },
+    "test": {
+      "images": 212,
+      "objects": 3263,
+      "empty_labels": 0,
+      "class_instances": {
+        "green": 970,
+        "half": 187,
+        "red": 1337,
+        "young": 769
+      }
+    }
+  },
+  "validation_test_byte_identical_to_raw": true,
+  "image_materialization": {
+    "hardlinked": 2990
+  }
+}

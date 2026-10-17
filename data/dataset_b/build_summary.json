@@ -1,0 +1,109 @@
+{
+  "schema": "dataset_b_groupaware_clean_v4_raw",
+  "source": "<data-root>/data\\lichi-maturity\\lichi-maturity\\lichi",
+  "output": "<data-root>/data\\lichi-maturity\\lichi-maturity\\lichi_701515_groupaware_clean_v4_raw",
+  "protocol_lock_sha256": "b2c6c590b5b933c5cb0e14ef9b3ecf14b051bb12fa77c3b42b9bb5f94f1f29ad",
+  "human_review_decisions_sha256": "ca556367296009ea8ace920638d97d50b1942344aafb0001e71e6f5abdc02762",
+  "model_blind_build": true,
+  "prohibited_signals_used": [],
+  "source_images": 1649,
+  "retained_images": 1495,
+  "excluded_images": 154,
+  "exclusion_counts": {
+    "filename_identified_source_offline_flip_or_rotation": 154
+  },
+  "reviewed_box_groups": 10,
+  "removed_duplicate_box_rows": 10,
+  "retained_empty_negative_images": 2,
+  "classes": {
+    "0": "green",
+    "1": "half",
+    "2": "red",
+    "3": "young"
+  },
+  "maturity_order": [
+    "young",
+    "green",
+    "half",
+    "red"
+  ],
+  "maturity_targets_by_class_id": [
+    1.0,
+    2.0,
+    3.0,
+    0.0
+  ],
+  "policy": {
+    "box_iou_review_threshold": 0.9,
+    "near_phash_hamming_max": 10,
+    "near_gray32_mae_max": 0.06,
+    "sequential_gap_max": 3,
+    "sequential_gray32_mae_max": 0.1,
+    "split_ratios": {
+      "train": 0.7,
+      "val": 0.15,
+      "test": 0.15
+    },
+    "seed": 20260731,
+    "trials": 1000
+  },
+  "group_count": 1188,
+  "multi_image_group_count": 49,
+  "largest_group_sizes": [
+    123,
+    66,
+    54,
+    6,
+    6,
+    5,
+    4,
+    3,
+    3,
+    3
+  ],
+  "constraint_edge_counts": {
+    "sequential_scene_constraint": 723,
+    "near_candidate": 7
+  },
+  "split_stats": {
+    "train": {
+      "images": 1071,
+      "objects": 12935,
+      "green": 3839,
+      "half": 765,
+      "red": 5288,
+      "young": 3043
+    },
+    "val": {
+      "images": 212,
+      "objects": 3267,
+      "green": 970,
+      "half": 191,
+      "red": 1337,
+      "young": 769
+    },
+    "test": {
+      "images": 212,
+      "objects": 3263,
+      "green": 970,
+      "half": 187,
+      "red": 1337,
+      "young": 769
+    }
+  },
+  "objective_score": 0.295575981458334,
+  "verification": {
+    "constraint_edges_checked": 730,
+    "constraint_edge_cross_split_violations": 0,
+    "group_cross_split_violations": 0,
+    "exact_hash_cross_split_counts": {
+      "train_val": 0,
+      "train_test": 0,
+      "val_test": 0
+    }
+  },
+  "scope_note": "Leakage-repaired same-source group-aware split; not an independent orchard/camera/domain holdout.",
+  "image_materialization": {
+    "hardlinked": 1495
+  }
+}

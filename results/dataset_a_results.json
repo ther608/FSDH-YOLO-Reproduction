@@ -1,0 +1,1777 @@
+{
+  "schema": "paper27_statistical_supplement_v2",
+  "protocol": {
+    "bootstrap_unit": "test image",
+    "bootstrap_type": "paired nonparametric percentile bootstrap",
+    "bootstrap_replicates": 10000,
+    "bootstrap_seed": 20260830,
+    "seed_aggregation": "same-seed paired difference, then arithmetic mean across seeds 0/1/2",
+    "confidence_interval": "2.5th and 97.5th percentiles",
+    "coco_iou_thresholds": [
+      0.5,
+      0.55,
+      0.6,
+      0.65,
+      0.7,
+      0.75,
+      0.8,
+      0.85,
+      0.8999999999999999,
+      0.95
+    ],
+    "coco_recall_thresholds": 101,
+    "coco_max_det": 300,
+    "confusion_confidence": 0.25,
+    "confusion_iou": 0.5,
+    "confusion_normalization": "each true-class row sums to one, including Miss/FN"
+  },
+  "datasets": {
+    "dataset_a": {
+      "annotations": "<original-workspace>\\external_configs\\rtdetr_coco_annotations\\instances_test.json",
+      "test_images": 126,
+      "evaluation_annotations": 2775,
+      "area_ranges": {
+        "all": [
+          0.0,
+          10000000000.0
+        ],
+        "small_area4": [
+          0.0,
+          4096.0
+        ],
+        "non_small": [
+          4096.0,
+          10000000000.0
+        ]
+      },
+      "models": {
+        "YOLO11n": {
+          "seeds": [
+            {
+              "seed": 0,
+              "predictions": "<original-workspace>\\runs\\common_eval\\paper16_unified_protocol\\yolo11n\\seed0__test_predictions_coco.json",
+              "reference_metrics": "<original-workspace>\\runs\\common_eval\\paper16_unified_protocol\\yolo11n\\seed0__test_metrics_common.json",
+              "point": {
+                "mAP50-95": 0.6512031253637267,
+                "mAP50": 0.800680637796339,
+                "AP75": 0.7555948963937795,
+                "AP_small": 0.559143328311884
+              },
+              "point_validation_abs_error": {
+                "mAP50-95": 0.0,
+                "mAP50": 1.1102230246251565e-16,
+                "AP75": 0.0,
+                "AP_small": 1.1102230246251565e-16
+              }
+            },
+            {
+              "seed": 1,
+              "predictions": "<original-workspace>\\runs\\common_eval\\paper16_unified_protocol\\yolo11n\\seed1__test_predictions_coco.json",
+              "reference_metrics": "<original-workspace>\\runs\\common_eval\\paper16_unified_protocol\\yolo11n\\seed1__test_metrics_common.json",
+              "point": {
+                "mAP50-95": 0.6415100140799201,
+                "mAP50": 0.7824642548553685,
+                "AP75": 0.7353309485307905,
+                "AP_small": 0.5482388434556938
+              },
+              "point_validation_abs_error": {
+                "mAP50-95": 0.0,
+                "mAP50": 1.1102230246251565e-16,
+                "AP75": 1.1102230246251565e-16,
+                "AP_small": 0.0
+              }
+            },
+            {
+              "seed": 2,
+              "predictions": "<original-workspace>\\runs\\common_eval\\paper16_unified_protocol\\yolo11n\\seed2__test_predictions_coco.json",
+              "reference_metrics": "<original-workspace>\\runs\\common_eval\\paper16_unified_protocol\\yolo11n\\seed2__test_metrics_common.json",
+              "point": {
+                "mAP50-95": 0.6401566110131865,
+                "mAP50": 0.7863667572276474,
+                "AP75": 0.7423120485901574,
+                "AP_small": 0.5487349659104196
+              },
+              "point_validation_abs_error": {
+                "mAP50-95": 1.1102230246251565e-16,
+                "mAP50": 0.0,
+                "AP75": 1.1102230246251565e-16,
+                "AP_small": 0.0
+              }
+            }
+          ],
+          "bootstrap": {
+            "mAP50-95": {
+              "point_mean": 0.6442899168189444,
+              "seed_sample_sd": 0.006025136036057495,
+              "bootstrap_95ci": {
+                "lower": 0.613827350546782,
+                "upper": 0.6719600527752844
+              }
+            },
+            "mAP50": {
+              "point_mean": 0.7898372166264517,
+              "seed_sample_sd": 0.009591257383267425,
+              "bootstrap_95ci": {
+                "lower": 0.7584757677350146,
+                "upper": 0.8177555456607931
+              }
+            },
+            "AP75": {
+              "point_mean": 0.7444126311715759,
+              "seed_sample_sd": 0.010293990049271616,
+              "bootstrap_95ci": {
+                "lower": 0.7090418554178055,
+                "upper": 0.7754353064188972
+              }
+            },
+            "AP_small": {
+              "point_mean": 0.5520390458926658,
+              "seed_sample_sd": 0.00615748779061152,
+              "bootstrap_95ci": {
+                "lower": 0.5205756990404888,
+                "upper": 0.5834253678922405
+              }
+            }
+          }
+        },
+        "FSDH-YOLO": {
+          "seeds": [
+            {
+              "seed": 0,
+              "predictions": "<original-workspace>\\runs\\common_eval\\paper16_unified_protocol\\fsdconv_shab\\seed0__test_predictions_coco.json",
+              "reference_metrics": "<original-workspace>\\runs\\common_eval\\paper16_unified_protocol\\fsdconv_shab\\seed0__test_metrics_common.json",
+              "point": {
+                "mAP50-95": 0.6667047129671739,
+                "mAP50": 0.8093113770574653,
+                "AP75": 0.7619286193019411,
+                "AP_small": 0.5757709353621007
+              },
+              "point_validation_abs_error": {
+                "mAP50-95": 0.0,
+                "mAP50": 0.0,
+                "AP75": 0.0,
+                "AP_small": 1.1102230246251565e-16
+              }
+            },
+            {
+              "seed": 1,
+              "predictions": "<original-workspace>\\runs\\common_eval\\paper16_unified_protocol\\fsdconv_shab\\seed1__test_predictions_coco.json",
+              "reference_metrics": "<original-workspace>\\runs\\common_eval\\paper16_unified_protocol\\fsdconv_shab\\seed1__test_metrics_common.json",
+              "point": {
+                "mAP50-95": 0.6714047484462197,
+                "mAP50": 0.8149990076388458,
+                "AP75": 0.7720539277900382,
+                "AP_small": 0.5696934718656859
+              },
+              "point_validation_abs_error": {
+                "mAP50-95": 0.0,
+                "mAP50": 1.1102230246251565e-16,
+                "AP75": 1.1102230246251565e-16,
+                "AP_small": 0.0
+              }
+            },
+            {
+              "seed": 2,
+              "predictions": "<original-workspace>\\runs\\common_eval\\paper16_unified_protocol\\fsdconv_shab\\seed2__test_predictions_coco.json",
+              "reference_metrics": "<original-workspace>\\runs\\common_eval\\paper16_unified_protocol\\fsdconv_shab\\seed2__test_metrics_common.json",
+              "point": {
+                "mAP50-95": 0.680804102112989,
+                "mAP50": 0.8286605913063108,
+                "AP75": 0.7818792922181915,
+                "AP_small": 0.5964902724824374
+              },
+              "point_validation_abs_error": {
+                "mAP50-95": 1.1102230246251565e-16,
+                "mAP50": 0.0,
+                "AP75": 0.0,
+                "AP_small": 1.1102230246251565e-16
+              }
+            }
+          ],
+          "bootstrap": {
+            "mAP50-95": {
+              "point_mean": 0.6729711878421275,
+              "seed_sample_sd": 0.007179031470684005,
+              "bootstrap_95ci": {
+                "lower": 0.6445848915559994,
+                "upper": 0.6972934934655066
+              }
+            },
+            "mAP50": {
+              "point_mean": 0.8176569920008739,
+              "seed_sample_sd": 0.009944681174553613,
+              "bootstrap_95ci": {
+                "lower": 0.788281556833565,
+                "upper": 0.8428701663497201
+              }
+            },
+            "AP75": {
+              "point_mean": 0.7719539464367235,
+              "seed_sample_sd": 0.009975712238033929,
+              "bootstrap_95ci": {
+                "lower": 0.739087467201228,
+                "upper": 0.7993122607122457
+              }
+            },
+            "AP_small": {
+              "point_mean": 0.580651559903408,
+              "seed_sample_sd": 0.01404928833636749,
+              "bootstrap_95ci": {
+                "lower": 0.5520119444049723,
+                "upper": 0.6098421274404845
+              }
+            }
+          }
+        }
+      },
+      "paired_fsdh_minus_yolo11n": {
+        "mAP50-95": {
+          "point_mean_difference": 0.028681271023183075,
+          "paired_seed_difference_sample_sd": 0.012616793793425429,
+          "bootstrap_95ci": {
+            "lower": 0.01506105167672194,
+            "upper": 0.0421458123272381
+          },
+          "bootstrap_positive_fraction": 1.0,
+          "bootstrap_negative_fraction": 0.0
+        },
+        "mAP50": {
+          "point_mean_difference": 0.0278197753744223,
+          "paired_seed_difference_sample_sd": 0.017319764638976717,
+          "bootstrap_95ci": {
+            "lower": 0.01178989921597425,
+            "upper": 0.04512963635355331
+          },
+          "bootstrap_positive_fraction": 0.9998,
+          "bootstrap_negative_fraction": 0.0002
+        },
+        "AP75": {
+          "point_mean_difference": 0.027541315265147803,
+          "paired_seed_difference_sample_sd": 0.018421290403632478,
+          "bootstrap_95ci": {
+            "lower": 0.01169224475427923,
+            "upper": 0.04330552000292123
+          },
+          "bootstrap_positive_fraction": 0.9996,
+          "bootstrap_negative_fraction": 0.0004
+        },
+        "AP_small": {
+          "point_mean_difference": 0.028612514010742163,
+          "paired_seed_difference_sample_sd": 0.016752907630765267,
+          "bootstrap_95ci": {
+            "lower": 0.011764700857126918,
+            "upper": 0.046974743417291846
+          },
+          "bootstrap_positive_fraction": 0.9994,
+          "bootstrap_negative_fraction": 0.0006
+        }
+      },
+      "area_ap": [
+        {
+          "target": "All",
+          "category_id": null,
+          "area": "small_area4",
+          "gt_count": 889,
+          "models": {
+            "YOLO11n": {
+              "per_seed": [
+                0.559143328311884,
+                0.5482388434556938,
+                0.5487349659104196
+              ],
+              "mean": 0.5520390458926658,
+              "sample_sd": 0.00615748779061152
+            },
+            "FSDH-YOLO": {
+              "per_seed": [
+                0.5757709353621007,
+                0.5696934718656859,
+                0.5964902724824374
+              ],
+              "mean": 0.580651559903408,
+              "sample_sd": 0.01404928833636749
+            }
+          },
+          "mean_difference": 0.028612514010742163
+        },
+        {
+          "target": "All",
+          "category_id": null,
+          "area": "non_small",
+          "gt_count": 1886,
+          "models": {
+            "YOLO11n": {
+              "per_seed": [
+                0.6929344496241493,
+                0.6801437154891051,
+                0.6802205962765511
+              ],
+              "mean": 0.6844329204632684,
+              "sample_sd": 0.007362640573792089
+            },
+            "FSDH-YOLO": {
+              "per_seed": [
+                0.7068531292540317,
+                0.7142276411344745,
+                0.7201563332039654
+              ],
+              "mean": 0.7137457011974906,
+              "sample_sd": 0.006664683669202052
+            }
+          },
+          "mean_difference": 0.029312780734222166
+        },
+        {
+          "target": "unripe",
+          "category_id": 0,
+          "area": "small_area4",
+          "gt_count": 457,
+          "models": {
+            "YOLO11n": {
+              "per_seed": [
+                0.6209807928079483,
+                0.6134927579980906,
+                0.6258563893715221
+              ],
+              "mean": 0.620109980059187,
+              "sample_sd": 0.006227646531160798
+            },
+            "FSDH-YOLO": {
+              "per_seed": [
+                0.6278173047440114,
+                0.622214897800864,
+                0.6310226598361129
+              ],
+              "mean": 0.6270182874603295,
+              "sample_sd": 0.004457913130839349
+            }
+          },
+          "mean_difference": 0.006908307401142455
+        },
+        {
+          "target": "unripe",
+          "category_id": 0,
+          "area": "non_small",
+          "gt_count": 500,
+          "models": {
+            "YOLO11n": {
+              "per_seed": [
+                0.7768187290857832,
+                0.7598663294048463,
+                0.7784503920948167
+              ],
+              "mean": 0.7717118168618153,
+              "sample_sd": 0.010290882414237902
+            },
+            "FSDH-YOLO": {
+              "per_seed": [
+                0.7913577517887143,
+                0.7950294042856442,
+                0.7888218951947034
+              ],
+              "mean": 0.7917363504230206,
+              "sample_sd": 0.003121024667148943
+            }
+          },
+          "mean_difference": 0.02002453356120526
+        },
+        {
+          "target": "semi-ripe",
+          "category_id": 1,
+          "area": "small_area4",
+          "gt_count": 145,
+          "models": {
+            "YOLO11n": {
+              "per_seed": [
+                0.44605124928671475,
+                0.4053762550354933,
+                0.4018843805448345
+              ],
+              "mean": 0.4177706282890142,
+              "sample_sd": 0.02455388848790177
+            },
+            "FSDH-YOLO": {
+              "per_seed": [
+                0.44827171626285905,
+                0.4496945978758403,
+                0.4951455666099049
+              ],
+              "mean": 0.4643706269162014,
+              "sample_sd": 0.026661373424571623
+            }
+          },
+          "mean_difference": 0.04659999862718722
+        },
+        {
+          "target": "semi-ripe",
+          "category_id": 1,
+          "area": "non_small",
+          "gt_count": 508,
+          "models": {
+            "YOLO11n": {
+              "per_seed": [
+                0.6197176287851126,
+                0.6104634585406519,
+                0.5666945175390142
+              ],
+              "mean": 0.5989585349549262,
+              "sample_sd": 0.028321988482256512
+            },
+            "FSDH-YOLO": {
+              "per_seed": [
+                0.6064996815719365,
+                0.6234221547301921,
+                0.6154186302492703
+              ],
+              "mean": 0.6151134888504662,
+              "sample_sd": 0.008465362242864687
+            }
+          },
+          "mean_difference": 0.016154953895540003
+        },
+        {
+          "target": "ripe",
+          "category_id": 2,
+          "area": "small_area4",
+          "gt_count": 287,
+          "models": {
+            "YOLO11n": {
+              "per_seed": [
+                0.6103979428409887,
+                0.6258475173334976,
+                0.6184641278149021
+              ],
+              "mean": 0.6182365293297961,
+              "sample_sd": 0.007727301521405299
+            },
+            "FSDH-YOLO": {
+              "per_seed": [
+                0.6512237850794313,
+                0.6371709199203532,
+                0.6633025910012944
+              ],
+              "mean": 0.650565765333693,
+              "sample_sd": 0.013078256797446683
+            }
+          },
+          "mean_difference": 0.03232923600389692
+        },
+        {
+          "target": "ripe",
+          "category_id": 2,
+          "area": "non_small",
+          "gt_count": 878,
+          "models": {
+            "YOLO11n": {
+              "per_seed": [
+                0.6822669910015522,
+                0.6701013585218176,
+                0.6955168791958224
+              ],
+              "mean": 0.682628409573064,
+              "sample_sd": 0.012711614386873375
+            },
+            "FSDH-YOLO": {
+              "per_seed": [
+                0.7227019544014442,
+                0.7242313643875868,
+                0.7562284741679222
+              ],
+              "mean": 0.7343872643189844,
+              "sample_sd": 0.018930494168812116
+            }
+          },
+          "mean_difference": 0.051758854745920346
+        }
+      ],
+      "confusion": {
+        "YOLO11n": {
+          "class_names": [
+            "unripe",
+            "semi-ripe",
+            "ripe"
+          ],
+          "columns": [
+            "unripe",
+            "semi-ripe",
+            "ripe",
+            "Miss/FN"
+          ],
+          "counts_per_seed": [
+            [
+              [
+                820,
+                21,
+                0,
+                116
+              ],
+              [
+                16,
+                535,
+                57,
+                45
+              ],
+              [
+                8,
+                182,
+                905,
+                70
+              ]
+            ],
+            [
+              [
+                804,
+                8,
+                4,
+                141
+              ],
+              [
+                33,
+                482,
+                70,
+                68
+              ],
+              [
+                5,
+                168,
+                901,
+                91
+              ]
+            ],
+            [
+              [
+                851,
+                4,
+                5,
+                97
+              ],
+              [
+                49,
+                471,
+                87,
+                46
+              ],
+              [
+                4,
+                158,
+                923,
+                80
+              ]
+            ]
+          ],
+          "normalized_mean": [
+            [
+              0.8620689655172414,
+              0.011494252873563218,
+              0.0031347962382445144,
+              0.12330198537095088
+            ],
+            [
+              0.050025523226135786,
+              0.759571209800919,
+              0.10923940786115365,
+              0.08116385911179173
+            ],
+            [
+              0.004864091559370529,
+              0.14535050071530756,
+              0.7808297567954221,
+              0.06895565092989986
+            ]
+          ],
+          "normalized_sample_sd": [
+            [
+              0.02496928557021633,
+              0.009287559474728934,
+              0.0027646304190852566,
+              0.02305964105612738
+            ],
+            [
+              0.02527186073402055,
+              0.052404099945692686,
+              0.023038864923729977,
+              0.019908116385911185
+            ],
+            [
+              0.001786837767782088,
+              0.010348006477839847,
+              0.010059167857652054,
+              0.009016281119650202
+            ]
+          ],
+          "false_positive_counts_per_seed": [
+            [
+              183,
+              252,
+              243
+            ],
+            [
+              116,
+              197,
+              152
+            ],
+            [
+              202,
+              222,
+              240
+            ]
+          ],
+          "false_positive_mean": [
+            167.0,
+            223.66666666666666,
+            211.66666666666666
+          ],
+          "false_positive_sample_sd": [
+            45.17742799230607,
+            27.537852736430512,
+            51.69461609619839
+          ],
+          "figure": "<original-workspace>\\analysis\\paper27_statistical_supplement\\confusion_dataset_a_yolo11n.png"
+        },
+        "FSDH-YOLO": {
+          "class_names": [
+            "unripe",
+            "semi-ripe",
+            "ripe"
+          ],
+          "columns": [
+            "unripe",
+            "semi-ripe",
+            "ripe",
+            "Miss/FN"
+          ],
+          "counts_per_seed": [
+            [
+              [
+                817,
+                18,
+                4,
+                118
+              ],
+              [
+                33,
+                461,
+                91,
+                68
+              ],
+              [
+                2,
+                122,
+                964,
+                77
+              ]
+            ],
+            [
+              [
+                824,
+                18,
+                4,
+                111
+              ],
+              [
+                37,
+                471,
+                91,
+                54
+              ],
+              [
+                6,
+                125,
+                965,
+                69
+              ]
+            ],
+            [
+              [
+                859,
+                5,
+                2,
+                91
+              ],
+              [
+                39,
+                449,
+                105,
+                60
+              ],
+              [
+                6,
+                90,
+                988,
+                81
+              ]
+            ]
+          ],
+          "normalized_mean": [
+            [
+              0.8707767328456985,
+              0.014280738418669454,
+              0.0034831069313827935,
+              0.11145942180424939
+            ],
+            [
+              0.055640632976008166,
+              0.704951505870342,
+              0.14650331801939764,
+              0.09290454313425217
+            ],
+            [
+              0.0040057224606580835,
+              0.09642346208869813,
+              0.8346208869814019,
+              0.06494992846924177
+            ]
+          ],
+          "normalized_sample_sd": [
+            [
+              0.023512906766614664,
+              0.00784279362535542,
+              0.0012065836346700643,
+              0.014641483494938138
+            ],
+            [
+              0.004678484629868135,
+              0.016868516224459756,
+              0.012378106843269156,
+              0.010756154928895093
+            ],
+            [
+              0.00198231852082275,
+              0.016651770560173345,
+              0.011654026812255367,
+              0.00524472182541441
+            ]
+          ],
+          "false_positive_counts_per_seed": [
+            [
+              179,
+              196,
+              223
+            ],
+            [
+              184,
+              172,
+              233
+            ],
+            [
+              237,
+              204,
+              210
+            ]
+          ],
+          "false_positive_mean": [
+            200.0,
+            190.66666666666666,
+            222.0
+          ],
+          "false_positive_sample_sd": [
+            32.14031735997639,
+            16.653327995729065,
+            11.532562594670797
+          ],
+          "figure": "<original-workspace>\\analysis\\paper27_statistical_supplement\\confusion_dataset_a_fsdh_yolo.png"
+        }
+      }
+    },
+    "dataset_b": {
+      "annotations": "<original-workspace>\\external_configs\\dataset_b_native4_v4\\instances_test.json",
+      "test_images": 212,
+      "evaluation_annotations": 3262,
+      "area_ranges": {
+        "all": [
+          0.0,
+          10000000000.0
+        ],
+        "small": [
+          0.0,
+          1024.0
+        ],
+        "non_small": [
+          1024.0,
+          10000000000.0
+        ],
+        "medium": [
+          1024.0,
+          9216.0
+        ],
+        "large": [
+          9216.0,
+          10000000000.0
+        ]
+      },
+      "models": {
+        "YOLO11n": {
+          "seeds": [
+            {
+              "seed": 0,
+              "predictions": "<original-workspace>\\runs\\common_eval\\paper_dataset_b_groupaware_clean_v4_aug_comparison_v1\\DatasetB4_YOLO11n\\seed0__test_predictions_coco.json",
+              "reference_metrics": "<original-workspace>\\runs\\common_eval\\paper_dataset_b_groupaware_clean_v4_aug_comparison_v1\\DatasetB4_YOLO11n\\seed0__test_metrics_common.json",
+              "point": {
+                "mAP50-95": 0.614367046518352,
+                "mAP50": 0.8573757600725205,
+                "AP75": 0.6992158590916514,
+                "AP_small": 0.30334948380856536
+              },
+              "point_validation_abs_error": {
+                "mAP50-95": 1.1102230246251565e-16,
+                "mAP50": 1.1102230246251565e-16,
+                "AP75": 0.0,
+                "AP_small": 0.0
+              }
+            },
+            {
+              "seed": 1,
+              "predictions": "<original-workspace>\\runs\\common_eval\\paper_dataset_b_groupaware_clean_v4_aug_comparison_v1\\DatasetB4_YOLO11n\\seed1__test_predictions_coco.json",
+              "reference_metrics": "<original-workspace>\\runs\\common_eval\\paper_dataset_b_groupaware_clean_v4_aug_comparison_v1\\DatasetB4_YOLO11n\\seed1__test_metrics_common.json",
+              "point": {
+                "mAP50-95": 0.6141718791241142,
+                "mAP50": 0.8470857856180736,
+                "AP75": 0.7086632224759082,
+                "AP_small": 0.3279045774821825
+              },
+              "point_validation_abs_error": {
+                "mAP50-95": 0.0,
+                "mAP50": 2.220446049250313e-16,
+                "AP75": 1.1102230246251565e-16,
+                "AP_small": 5.551115123125783e-17
+              }
+            },
+            {
+              "seed": 2,
+              "predictions": "<original-workspace>\\runs\\common_eval\\paper_dataset_b_groupaware_clean_v4_aug_comparison_v1\\DatasetB4_YOLO11n\\seed2__test_predictions_coco.json",
+              "reference_metrics": "<original-workspace>\\runs\\common_eval\\paper_dataset_b_groupaware_clean_v4_aug_comparison_v1\\DatasetB4_YOLO11n\\seed2__test_metrics_common.json",
+              "point": {
+                "mAP50-95": 0.6077688709270064,
+                "mAP50": 0.8426806664634587,
+                "AP75": 0.706982515889935,
+                "AP_small": 0.33869830685672175
+              },
+              "point_validation_abs_error": {
+                "mAP50-95": 0.0,
+                "mAP50": 0.0,
+                "AP75": 0.0,
+                "AP_small": 0.0
+              }
+            }
+          ],
+          "bootstrap": {
+            "mAP50-95": {
+              "point_mean": 0.6121025988564909,
+              "seed_sample_sd": 0.003754386887767249,
+              "bootstrap_95ci": {
+                "lower": 0.586535598913057,
+                "upper": 0.6435554257306169
+              }
+            },
+            "mAP50": {
+              "point_mean": 0.8490474040513508,
+              "seed_sample_sd": 0.007541379462876929,
+              "bootstrap_95ci": {
+                "lower": 0.8263119997946057,
+                "upper": 0.874462519591313
+              }
+            },
+            "AP75": {
+              "point_mean": 0.7049538658191649,
+              "seed_sample_sd": 0.005039814933187098,
+              "bootstrap_95ci": {
+                "lower": 0.6630026423685963,
+                "upper": 0.7519392477165353
+              }
+            },
+            "AP_small": {
+              "point_mean": 0.3233174560491565,
+              "seed_sample_sd": 0.018115354951075698,
+              "bootstrap_95ci": {
+                "lower": 0.2925271693211593,
+                "upper": 0.36656338898187196
+              }
+            }
+          }
+        },
+        "FSDH-YOLO": {
+          "seeds": [
+            {
+              "seed": 0,
+              "predictions": "<original-workspace>\\runs\\common_eval\\paper_dataset_b_groupaware_clean_v4_aug_comparison_v1\\DatasetB4_FSDH_YOLO\\seed0__test_predictions_coco.json",
+              "reference_metrics": "<original-workspace>\\runs\\common_eval\\paper_dataset_b_groupaware_clean_v4_aug_comparison_v1\\DatasetB4_FSDH_YOLO\\seed0__test_metrics_common.json",
+              "point": {
+                "mAP50-95": 0.5964679353638744,
+                "mAP50": 0.8401662697091347,
+                "AP75": 0.6979352069946098,
+                "AP_small": 0.32794851064060887
+              },
+              "point_validation_abs_error": {
+                "mAP50-95": 0.0,
+                "mAP50": 1.1102230246251565e-16,
+                "AP75": 1.1102230246251565e-16,
+                "AP_small": 5.551115123125783e-17
+              }
+            },
+            {
+              "seed": 1,
+              "predictions": "<original-workspace>\\runs\\common_eval\\paper_dataset_b_groupaware_clean_v4_aug_comparison_v1\\DatasetB4_FSDH_YOLO\\seed1__test_predictions_coco.json",
+              "reference_metrics": "<original-workspace>\\runs\\common_eval\\paper_dataset_b_groupaware_clean_v4_aug_comparison_v1\\DatasetB4_FSDH_YOLO\\seed1__test_metrics_common.json",
+              "point": {
+                "mAP50-95": 0.6081606639156805,
+                "mAP50": 0.853049088222837,
+                "AP75": 0.7079095702540946,
+                "AP_small": 0.33696976536230017
+              },
+              "point_validation_abs_error": {
+                "mAP50-95": 0.0,
+                "mAP50": 0.0,
+                "AP75": 1.1102230246251565e-16,
+                "AP_small": 0.0
+              }
+            },
+            {
+              "seed": 2,
+              "predictions": "<original-workspace>\\runs\\common_eval\\paper_dataset_b_groupaware_clean_v4_aug_comparison_v1\\DatasetB4_FSDH_YOLO\\seed2__test_predictions_coco.json",
+              "reference_metrics": "<original-workspace>\\runs\\common_eval\\paper_dataset_b_groupaware_clean_v4_aug_comparison_v1\\DatasetB4_FSDH_YOLO\\seed2__test_metrics_common.json",
+              "point": {
+                "mAP50-95": 0.6002646770883406,
+                "mAP50": 0.841799723242362,
+                "AP75": 0.6999689689555972,
+                "AP_small": 0.3108004378759035
+              },
+              "point_validation_abs_error": {
+                "mAP50-95": 0.0,
+                "mAP50": 2.220446049250313e-16,
+                "AP75": 1.1102230246251565e-16,
+                "AP_small": 5.551115123125783e-17
+              }
+            }
+          ],
+          "bootstrap": {
+            "mAP50-95": {
+              "point_mean": 0.6016310921226319,
+              "seed_sample_sd": 0.0059649218587511914,
+              "bootstrap_95ci": {
+                "lower": 0.5749991139996058,
+                "upper": 0.6322124570639985
+              }
+            },
+            "mAP50": {
+              "point_mean": 0.8450050270581112,
+              "seed_sample_sd": 0.007014073896651667,
+              "bootstrap_95ci": {
+                "lower": 0.8193925476827255,
+                "upper": 0.8720480658198229
+              }
+            },
+            "AP75": {
+              "point_mean": 0.7019379154014338,
+              "seed_sample_sd": 0.00527063024580267,
+              "bootstrap_95ci": {
+                "lower": 0.6606638024642193,
+                "upper": 0.7471916658232979
+              }
+            },
+            "AP_small": {
+              "point_mean": 0.3252395712929375,
+              "seed_sample_sd": 0.013293313716473803,
+              "bootstrap_95ci": {
+                "lower": 0.2886710398168204,
+                "upper": 0.357212022059797
+              }
+            }
+          }
+        }
+      },
+      "paired_fsdh_minus_yolo11n": {
+        "mAP50-95": {
+          "point_mean_difference": -0.010471506733858993,
+          "paired_seed_difference_sample_sd": 0.006475664202958346,
+          "bootstrap_95ci": {
+            "lower": -0.022577178513466904,
+            "upper": -0.0010608741600615951
+          },
+          "bootstrap_positive_fraction": 0.0142,
+          "bootstrap_negative_fraction": 0.9858
+        },
+        "mAP50": {
+          "point_mean_difference": -0.004042376993239727,
+          "paired_seed_difference_sample_sd": 0.011905485336932345,
+          "bootstrap_95ci": {
+            "lower": -0.016963589606269903,
+            "upper": 0.006642509112187625
+          },
+          "bootstrap_positive_fraction": 0.2262,
+          "bootstrap_negative_fraction": 0.7738
+        },
+        "AP75": {
+          "point_mean_difference": -0.0030159504177309873,
+          "paired_seed_difference_sample_sd": 0.0034720333594757597,
+          "bootstrap_95ci": {
+            "lower": -0.020414074202293037,
+            "upper": 0.012210717314172241
+          },
+          "bootstrap_positive_fraction": 0.3234,
+          "bootstrap_negative_fraction": 0.6766
+        },
+        "AP_small": {
+          "point_mean_difference": 0.001922115243780979,
+          "paired_seed_difference_sample_sd": 0.026967547766020596,
+          "bootstrap_95ci": {
+            "lower": -0.027152678134719672,
+            "upper": 0.01595698139787374
+          },
+          "bootstrap_positive_fraction": 0.4321,
+          "bootstrap_negative_fraction": 0.5679
+        }
+      },
+      "area_ap": [
+        {
+          "area": "small",
+          "gt_count": 1000,
+          "models": {
+            "YOLO11n": {
+              "per_seed": [
+                0.30334948380856536,
+                0.3279045774821825,
+                0.33869830685672175
+              ],
+              "mean": 0.3233174560491565,
+              "sample_sd": 0.018115354951075698
+            },
+            "FSDH-YOLO": {
+              "per_seed": [
+                0.32794851064060887,
+                0.33696976536230017,
+                0.3108004378759035
+              ],
+              "mean": 0.3252395712929375,
+              "sample_sd": 0.013293313716473803
+            }
+          },
+          "mean_difference": 0.0019221152437809974
+        },
+        {
+          "area": "medium",
+          "gt_count": 1948,
+          "models": {
+            "YOLO11n": {
+              "per_seed": [
+                0.6401148783175152,
+                0.6365541856376686,
+                0.6270092850545147
+              ],
+              "mean": 0.6345594496698995,
+              "sample_sd": 0.006776678565465172
+            },
+            "FSDH-YOLO": {
+              "per_seed": [
+                0.6306815174399467,
+                0.6392125152286949,
+                0.6273086603106242
+              ],
+              "mean": 0.6324008976597553,
+              "sample_sd": 0.00613535995136562
+            }
+          },
+          "mean_difference": -0.0021585520101442546
+        },
+        {
+          "area": "large",
+          "gt_count": 315,
+          "models": {
+            "YOLO11n": {
+              "per_seed": [
+                0.7560942084998665,
+                0.7466353739824034,
+                0.7384368600147242
+              ],
+              "mean": 0.7470554808323314,
+              "sample_sd": 0.008836167506643185
+            },
+            "FSDH-YOLO": {
+              "per_seed": [
+                0.7040394656129273,
+                0.7234449377031091,
+                0.7292317071145462
+              ],
+              "mean": 0.7189053701435274,
+              "sample_sd": 0.013195378478466496
+            }
+          },
+          "mean_difference": -0.02815011068880402
+        }
+      ],
+      "class_area_ap": [
+        {
+          "target": "All",
+          "category_id": null,
+          "area": "small",
+          "gt_count": 1000,
+          "models": {
+            "YOLO11n": {
+              "per_seed": [
+                0.30334948380856536,
+                0.3279045774821825,
+                0.33869830685672175
+              ],
+              "mean": 0.3233174560491565,
+              "sample_sd": 0.018115354951075698
+            },
+            "FSDH-YOLO": {
+              "per_seed": [
+                0.32794851064060887,
+                0.33696976536230017,
+                0.3108004378759035
+              ],
+              "mean": 0.3252395712929375,
+              "sample_sd": 0.013293313716473803
+            }
+          },
+          "mean_difference": 0.0019221152437809974
+        },
+        {
+          "target": "All",
+          "category_id": null,
+          "area": "non_small",
+          "gt_count": 2262,
+          "models": {
+            "YOLO11n": {
+              "per_seed": [
+                0.6817195628780226,
+                0.6744734192382152,
+                0.6672132219560516
+              ],
+              "mean": 0.6744687346907631,
+              "sample_sd": 0.007253171595574676
+            },
+            "FSDH-YOLO": {
+              "per_seed": [
+                0.6565726890555981,
+                0.6677368963524843,
+                0.6627165743899276
+              ],
+              "mean": 0.6623420532660034,
+              "sample_sd": 0.005591518639525519
+            }
+          },
+          "mean_difference": -0.0121266814247597
+        },
+        {
+          "target": "green",
+          "category_id": 0,
+          "area": "small",
+          "gt_count": 187,
+          "models": {
+            "YOLO11n": {
+              "per_seed": [
+                0.3915845746296668,
+                0.417152671117288,
+                0.43349619120237487
+              ],
+              "mean": 0.41407781231644325,
+              "sample_sd": 0.021124321726821767
+            },
+            "FSDH-YOLO": {
+              "per_seed": [
+                0.4547146521036255,
+                0.44839847292523405,
+                0.4637566575894912
+              ],
+              "mean": 0.45562326087278354,
+              "sample_sd": 0.007719302848502517
+            }
+          },
+          "mean_difference": 0.04154544855634029
+        },
+        {
+          "target": "green",
+          "category_id": 0,
+          "area": "non_small",
+          "gt_count": 782,
+          "models": {
+            "YOLO11n": {
+              "per_seed": [
+                0.6976673571936578,
+                0.6952953448568229,
+                0.6984673655043637
+              ],
+              "mean": 0.6971433558516148,
+              "sample_sd": 0.001649655055444477
+            },
+            "FSDH-YOLO": {
+              "per_seed": [
+                0.7058660660770549,
+                0.7126892402345051,
+                0.7046443344550504
+              ],
+              "mean": 0.7077332135888702,
+              "sample_sd": 0.004335297812519253
+            }
+          },
+          "mean_difference": 0.010589857737255404
+        },
+        {
+          "target": "half",
+          "category_id": 1,
+          "area": "small",
+          "gt_count": 9,
+          "models": {
+            "YOLO11n": {
+              "per_seed": [
+                0.04523355034070663,
+                0.026820875495732515,
+                0.055995289776230375
+              ],
+              "mean": 0.04268323853755651,
+              "sample_sd": 0.014753463317895716
+            },
+            "FSDH-YOLO": {
+              "per_seed": [
+                0.0157412067795332,
+                0.02821137645775195,
+                0.004052766459736364
+              ],
+              "mean": 0.016001783232340507,
+              "sample_sd": 0.01208141276196095
+            }
+          },
+          "mean_difference": -0.026681455305216005
+        },
+        {
+          "target": "half",
+          "category_id": 1,
+          "area": "non_small",
+          "gt_count": 178,
+          "models": {
+            "YOLO11n": {
+              "per_seed": [
+                0.6405862154542039,
+                0.5957081734850054,
+                0.5801597461097714
+              ],
+              "mean": 0.6054847116829936,
+              "sample_sd": 0.03137714253578475
+            },
+            "FSDH-YOLO": {
+              "per_seed": [
+                0.5510284147098841,
+                0.5668610625004697,
+                0.5662443629539048
+              ],
+              "mean": 0.5613779467214196,
+              "sample_sd": 0.008968260100266464
+            }
+          },
+          "mean_difference": -0.04410676496157395
+        },
+        {
+          "target": "red",
+          "category_id": 2,
+          "area": "small",
+          "gt_count": 713,
+          "models": {
+            "YOLO11n": {
+              "per_seed": [
+                0.39747151048131424,
+                0.44302305337671993,
+                0.4350399101463527
+              ],
+              "mean": 0.42517815800146225,
+              "sample_sd": 0.024324398894185115
+            },
+            "FSDH-YOLO": {
+              "per_seed": [
+                0.4113895750358191,
+                0.4236815667791003,
+                0.3981522429831766
+              ],
+              "mean": 0.41107446159936534,
+              "sample_sd": 0.012767578694789956
+            }
+          },
+          "mean_difference": -0.01410369640209691
+        },
+        {
+          "target": "red",
+          "category_id": 2,
+          "area": "non_small",
+          "gt_count": 624,
+          "models": {
+            "YOLO11n": {
+              "per_seed": [
+                0.7243859852530312,
+                0.7238714257104081,
+                0.7318939787622046
+              ],
+              "mean": 0.7267171299085479,
+              "sample_sd": 0.004490658740199573
+            },
+            "FSDH-YOLO": {
+              "per_seed": [
+                0.7033511450958094,
+                0.7167172170416245,
+                0.709477871446874
+              ],
+              "mean": 0.7098487445281026,
+              "sample_sd": 0.0066907495803505595
+            }
+          },
+          "mean_difference": -0.016868385380445217
+        },
+        {
+          "target": "young",
+          "category_id": 3,
+          "area": "small",
+          "gt_count": 91,
+          "models": {
+            "YOLO11n": {
+              "per_seed": [
+                0.3791082997825737,
+                0.4246217099389895,
+                0.43026183630192916
+              ],
+              "mean": 0.41133061534116405,
+              "sample_sd": 0.02804747709359106
+            },
+            "FSDH-YOLO": {
+              "per_seed": [
+                0.4299486086434576,
+                0.44758764528711437,
+                0.37724008447120994
+              ],
+              "mean": 0.4182587794672606,
+              "sample_sd": 0.036601692690548374
+            }
+          },
+          "mean_difference": 0.0069281641260965365
+        },
+        {
+          "target": "young",
+          "category_id": 3,
+          "area": "non_small",
+          "gt_count": 678,
+          "models": {
+            "YOLO11n": {
+              "per_seed": [
+                0.6642386936111974,
+                0.6830187329006249,
+                0.6583317974478671
+              ],
+              "mean": 0.6685297413198965,
+              "sample_sd": 0.012890733623068399
+            },
+            "FSDH-YOLO": {
+              "per_seed": [
+                0.6660451303396435,
+                0.6746800656333379,
+                0.6704997287038811
+              ],
+              "mean": 0.6704083082256208,
+              "sample_sd": 0.004318193506485825
+            }
+          },
+          "mean_difference": 0.0018785669057242993
+        }
+      ],
+      "confusion": {
+        "YOLO11n": {
+          "class_names": [
+            "green",
+            "half",
+            "red",
+            "young"
+          ],
+          "columns": [
+            "green",
+            "half",
+            "red",
+            "young",
+            "Miss/FN"
+          ],
+          "counts_per_seed": [
+            [
+              [
+                868,
+                33,
+                0,
+                0,
+                68
+              ],
+              [
+                12,
+                141,
+                9,
+                0,
+                25
+              ],
+              [
+                0,
+                0,
+                1138,
+                0,
+                199
+              ],
+              [
+                0,
+                0,
+                0,
+                716,
+                53
+              ]
+            ],
+            [
+              [
+                873,
+                31,
+                0,
+                0,
+                65
+              ],
+              [
+                20,
+                128,
+                14,
+                0,
+                25
+              ],
+              [
+                0,
+                0,
+                1138,
+                0,
+                199
+              ],
+              [
+                0,
+                0,
+                0,
+                734,
+                35
+              ]
+            ],
+            [
+              [
+                879,
+                26,
+                0,
+                0,
+                64
+              ],
+              [
+                14,
+                132,
+                10,
+                0,
+                31
+              ],
+              [
+                0,
+                0,
+                1170,
+                0,
+                167
+              ],
+              [
+                0,
+                0,
+                0,
+                741,
+                28
+              ]
+            ]
+          ],
+          "normalized_mean": [
+            [
+              0.9012727898176814,
+              0.03095975232198142,
+              0.0,
+              0.0,
+              0.06776745786033712
+            ],
+            [
+              0.08199643493761141,
+              0.714795008912656,
+              0.0588235294117647,
+              0.0,
+              0.1443850267379679
+            ],
+            [
+              0.0,
+              0.0,
+              0.8591373722263774,
+              0.0,
+              0.14086262777362255
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.9497182488079757,
+              0.05028175119202427
+            ]
+          ],
+          "normalized_sample_sd": [
+            [
+              0.005683767334660574,
+              0.0037208991490856437,
+              0.0,
+              0.0,
+              0.0021482621253520458
+            ],
+            [
+              0.022263807480921202,
+              0.03560603271914116,
+              0.014148402732965724,
+              0.0,
+              0.01852460756758157
+            ],
+            [
+              0.0,
+              0.0,
+              0.013818405844478663,
+              0.0,
+              0.013818405844478701
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.016771167856222898,
+              0.016771167856222888
+            ]
+          ],
+          "false_positive_counts_per_seed": [
+            [
+              207,
+              74,
+              342,
+              143
+            ],
+            [
+              201,
+              60,
+              335,
+              192
+            ],
+            [
+              228,
+              41,
+              387,
+              211
+            ]
+          ],
+          "false_positive_mean": [
+            212.0,
+            58.333333333333336,
+            354.6666666666667,
+            182.0
+          ],
+          "false_positive_sample_sd": [
+            14.177446878757825,
+            16.563010998406458,
+            28.21937868439582,
+            35.08560958569767
+          ],
+          "figure": "<original-workspace>\\analysis\\paper27_statistical_supplement\\confusion_dataset_b_yolo11n.png"
+        },
+        "FSDH-YOLO": {
+          "class_names": [
+            "green",
+            "half",
+            "red",
+            "young"
+          ],
+          "columns": [
+            "green",
+            "half",
+            "red",
+            "young",
+            "Miss/FN"
+          ],
+          "counts_per_seed": [
+            [
+              [
+                891,
+                23,
+                0,
+                0,
+                55
+              ],
+              [
+                19,
+                121,
+                21,
+                0,
+                26
+              ],
+              [
+                0,
+                1,
+                1173,
+                0,
+                163
+              ],
+              [
+                0,
+                0,
+                0,
+                750,
+                19
+              ]
+            ],
+            [
+              [
+                907,
+                22,
+                0,
+                1,
+                39
+              ],
+              [
+                15,
+                131,
+                18,
+                0,
+                23
+              ],
+              [
+                0,
+                0,
+                1201,
+                0,
+                136
+              ],
+              [
+                1,
+                0,
+                0,
+                753,
+                15
+              ]
+            ],
+            [
+              [
+                893,
+                23,
+                0,
+                0,
+                53
+              ],
+              [
+                14,
+                124,
+                18,
+                0,
+                31
+              ],
+              [
+                0,
+                1,
+                1159,
+                0,
+                177
+              ],
+              [
+                0,
+                0,
+                0,
+                739,
+                30
+              ]
+            ]
+          ],
+          "normalized_mean": [
+            [
+              0.9256965944272445,
+              0.023391812865497075,
+              0.0,
+              0.0003439972480220158,
+              0.050567595459236316
+            ],
+            [
+              0.08556149732620322,
+              0.6702317290552585,
+              0.10160427807486631,
+              0.0,
+              0.14260249554367202
+            ],
+            [
+              0.0,
+              0.0004986287708800798,
+              0.880827723759661,
+              0.0,
+              0.118673647469459
+            ],
+            [
+              0.00043346337234503684,
+              0.0,
+              0.0,
+              0.9718248807975726,
+              0.027741655830082357
+            ]
+          ],
+          "normalized_sample_sd": [
+            [
+              0.008996695445904389,
+              0.0005958207112380041,
+              0.0,
+              0.0005958207112380038,
+              0.008996695445904382
+            ],
+            [
+              0.014148402732965729,
+              0.027441718927523447,
+              0.009262303783790792,
+              0.0,
+              0.0216120421621785
+            ],
+            [
+              0.0,
+              0.00043182518263995946,
+              0.015995028603685322,
+              0.0,
+              0.015587633041476532
+            ],
+            [
+              0.0007507805841217501,
+              0.0,
+              0.0,
+              0.009585324832031207,
+              0.010100719720616423
+            ]
+          ],
+          "false_positive_counts_per_seed": [
+            [
+              222,
+              52,
+              382,
+              201
+            ],
+            [
+              240,
+              57,
+              383,
+              206
+            ],
+            [
+              224,
+              69,
+              374,
+              173
+            ]
+          ],
+          "false_positive_mean": [
+            228.66666666666666,
+            59.333333333333336,
+            379.6666666666667,
+            193.33333333333334
+          ],
+          "false_positive_sample_sd": [
+            9.865765724632494,
+            8.736894948054106,
+            4.932882862316248,
+            17.7857620959388
+          ],
+          "figure": "<original-workspace>\\analysis\\paper27_statistical_supplement\\confusion_dataset_b_fsdh_yolo.png"
+        }
+      }
+    }
+  }
+}

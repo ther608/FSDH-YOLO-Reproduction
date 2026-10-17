@@ -1,0 +1,7 @@
+﻿model,seed,metric,area_definition,AP_small_percent
+YOLO11n,0,AP_small_COCO,original-image area < 1024 pixels,30.334948380856535
+YOLO11n,1,AP_small_COCO,original-image area < 1024 pixels,32.790457748218245
+YOLO11n,2,AP_small_COCO,original-image area < 1024 pixels,33.86983068567218
+FSDH-YOLO-n,0,AP_small_COCO,original-image area < 1024 pixels,32.79485106406088
+FSDH-YOLO-n,1,AP_small_COCO,original-image area < 1024 pixels,33.69697653623002
+FSDH-YOLO-n,2,AP_small_COCO,original-image area < 1024 pixels,31.080043787590355

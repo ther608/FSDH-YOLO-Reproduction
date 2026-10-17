@@ -1,0 +1,54 @@
+{
+  "schema": "external_detection_metrics_v2",
+  "model": "FSDConv+SHAB",
+  "seed": 0,
+  "checkpoint": "<original-workspace>\\runs\\detect\\paper_groupaware_clean_v2_reruns\\dsA_groupaware_clean_aug_v2__fsd_completion__fsd_shab__seed0\\weights\\best.pt",
+  "annotations": "<original-workspace>\\external_configs\\rtdetr_coco_annotations\\instances_test.json",
+  "predictions": "<original-workspace>\\runs\\common_eval\\paper16_unified_protocol\\fsdconv_shab\\seed0__test_predictions_coco.json",
+  "split": "test",
+  "protocol": {
+    "imgsz": 640,
+    "prediction_confidence_floor": 0.001,
+    "nms_iou": 0.7,
+    "max_det": 300,
+    "coco_max_dets": [
+      1,
+      10,
+      300
+    ],
+    "small_area": "original-image area < 32^2 * 4 pixels"
+  },
+  "overall": {
+    "precision": 0.7858121151947742,
+    "recall": 0.7836414829558347,
+    "max_mean_f1": 0.7847252980292327,
+    "confidence": 0.41300000000000003,
+    "definition": "macro class P/R at confidence maximizing mean class F1, class-aware IoU>=0.5",
+    "map50_95": 0.6667047129671739,
+    "map50": 0.8093113770574653,
+    "ap75": 0.7619286193019411,
+    "ap_small_area4": 0.5757709353621006,
+    "ar300": 0.7625554773699934
+  },
+  "per_class": {
+    "unripe": {
+      "ap50_95": 0.7151751773423793,
+      "ap50": 0.8898475914007345
+    },
+    "semi-ripe": {
+      "ap50_95": 0.5777451446888902,
+      "ap50": 0.6911753722652259
+    },
+    "ripe": {
+      "ap50_95": 0.7071938168702521,
+      "ap50": 0.8469111675064352
+    }
+  },
+  "quality": {
+    "corr_score_iou_tp": 0.5902981979777281,
+    "ece_iou50": 0.018041741876932433,
+    "ece_bins": 15,
+    "predictions": 12009,
+    "true_positive_matches": 2543
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "schema": "dataset_b_v4_human_review_v1",
+  "box_decisions": {
+    "-162-_jpg.rf.d9d638f1c883e94ce23e7e0dd21626e9/G001": {
+      "action": "keep_one",
+      "keep_line": 12,
+      "note": "No existing whole-fruit box found after all-label context review; user fallback decision L12."
+    },
+    "-249-_jpg.rf.6042d3f11f17eda7eb62c0706a5b08b0/G001": {
+      "action": "keep_one",
+      "keep_line": 7,
+      "note": "User-confirmed."
+    },
+    "IMG_20230519_130735_jpg.rf.32d4bba2defeb3a4653ce22d7aae6d6c/G001": {
+      "action": "keep_one",
+      "keep_line": 3,
+      "note": "User-confirmed."
+    },
+    "IMG_20230621_114307_jpg.rf.ebdd27dd94768fba79f514d8cb8dbfc3/G001": {
+      "action": "keep_one",
+      "keep_line": 7,
+      "note": "User-confirmed."
+    },
+    "IMG_20230621_114451_jpg.rf.ea335e9532b7cb8cffc78f6c1625b8bb/G001": {
+      "action": "keep_one",
+      "keep_line": 7,
+      "note": "No existing whole-fruit box found after all-label context review; user fallback decision L7 (half)."
+    },
+    "IMG_20230621_115942_jpg.rf.e98304d11658457fb72f6cf3bc5ee1e0/G001": {
+      "action": "keep_one",
+      "keep_line": 8,
+      "note": "User-confirmed as L008."
+    },
+    "IMG_20230621_120150_jpg.rf.5c7478da15530792997feb737894ffa2/G001": {
+      "action": "keep_one",
+      "keep_line": 4,
+      "note": "No existing whole-fruit box found after all-label context review; user fallback decision L4."
+    },
+    "Lychee_5029_jpg.rf.70a6550025d7308340cb63bf057b536e/G001": {
+      "action": "keep_one",
+      "keep_line": 14,
+      "note": "User-confirmed."
+    },
+    "Lychee_5029_jpg.rf.70a6550025d7308340cb63bf057b536e/G002": {
+      "action": "keep_one",
+      "keep_line": 15,
+      "note": "User-confirmed."
+    },
+    "-86-_jpg.rf.0cec0a373fa347a89eefcba4d35c8259/G001": {
+      "action": "keep_one",
+      "keep_line": 1,
+      "note": "No existing whole-fruit box found after all-label context review; user fallback decision L1."
+    }
+  },
+  "empty_label_decisions": {
+    "IMG_20230519_132629_jpg.rf.2c9a6df3fc1b762bdab84949da3454c7": {
+      "action": "keep",
+      "note": "User-confirmed true negative; no missed lychee."
+    },
+    "IMG_20230621_120409_jpg.rf.839ea198d04dceeed40ece22da84de0a": {
+      "action": "keep",
+      "note": "User-confirmed true negative; no missed lychee."
+    }
+  },
+  "allowed_box_actions": [
+    "keep_one",
+    "keep_all"
+  ],
+  "allowed_empty_label_actions": [
+    "keep",
+    "exclude"
+  ]
+}

@@ -1,0 +1,54 @@
+Lychee three-category transparent augmentation dataset
+
+
+
+Source split (unchanged): <data-root>/data\An RGB-D Image Dataset for Lychee Detection and Ma\An RGB-D Image Dataset for Lychee Detection and Ma\An RGB-D Image Dataset for Lychee\lychee_groupaware_clean_raw_v2
+
+Output split: <data-root>/data\An RGB-D Image Dataset for Lychee Detection and Ma\An RGB-D Image Dataset for Lychee Detection and Ma\An RGB-D Image Dataset for Lychee\lychee_groupaware_clean_aug_v2
+
+Random seed: 20260731
+
+Augmentation scope: train only; validation and test are copied without augmentation.
+
+Generation rule: original training image + one independent sample from each category.
+
+No augmentation output is used as the input of another augmentation.
+
+
+
+Category 1 / suffix _aug1_illum_color_<operation>: one illumination/colour operation.
+
+  brightness_contrast: contrast alpha 0.88-1.12 and brightness beta -18 to 18; or
+
+  hsv_colour: saturation scale 0.86-1.14 and hue shift -4 to 4.
+
+Category 2 / suffix _aug2_image_quality_<operation>: one image-quality operation.
+
+  gaussian_blur: 3x3 kernel, sigma 0.35-0.85; or
+
+  sensor_noise: zero-mean Gaussian noise, stddev 3.0-7.0.
+
+Category 3 / suffix _aug3_mild_geometry_<operation>: one label-synchronised geometric operation.
+
+  horizontal flip, rotation within +/-5 degrees, translation within +/-2%, or scale 1.04-1.10.
+
+  Vertical flipping is not used.
+
+
+
+Copied original train images: 590
+
+Generated train images: 1770
+
+Category counts: {"illum_color": 590, "image_quality": 590, "mild_geometry": 590}
+
+Operation counts: {"brightness_contrast": 305, "gaussian_blur": 304, "horizontal_flip": 156, "hsv_colour": 285, "rotation": 143, "scale": 137, "sensor_noise": 286, "translation": 154}
+
+Detailed per-image log: augmentation_log.csv
+
+train: images=2360, labels=2360, objects=44151, unripe=15268, semi-ripe=10372, ripe=18511, ratio=34.6%/23.5%/41.9%
+
+val: images=126, labels=126, objects=2690, unripe=909, semi-ripe=657, ripe=1124, ratio=33.8%/24.4%/41.8%
+
+test: images=126, labels=126, objects=2775, unripe=957, semi-ripe=653, ripe=1165, ratio=34.5%/23.5%/42.0%
+

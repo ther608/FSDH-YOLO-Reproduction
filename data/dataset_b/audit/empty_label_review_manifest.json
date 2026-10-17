@@ -1,0 +1,16 @@
+[
+  {
+    "image_id": "IMG_20230519_132629_jpg.rf.2c9a6df3fc1b762bdab84949da3454c7",
+    "legacy_split": "train",
+    "image": "<data-root>/data\\lichi-maturity\\lichi-maturity\\lichi\\train\\images\\IMG_20230519_132629_jpg.rf.2c9a6df3fc1b762bdab84949da3454c7.jpg",
+    "label": "<data-root>/data\\lichi-maturity\\lichi-maturity\\lichi\\train\\labels\\IMG_20230519_132629_jpg.rf.2c9a6df3fc1b762bdab84949da3454c7.txt",
+    "asset": "review_assets/empty_001.png"
+  },
+  {
+    "image_id": "IMG_20230621_120409_jpg.rf.839ea198d04dceeed40ece22da84de0a",
+    "legacy_split": "val",
+    "image": "<data-root>/data\\lichi-maturity\\lichi-maturity\\lichi\\val\\images\\IMG_20230621_120409_jpg.rf.839ea198d04dceeed40ece22da84de0a.jpg",
+    "label": "<data-root>/data\\lichi-maturity\\lichi-maturity\\lichi\\val\\labels\\IMG_20230621_120409_jpg.rf.839ea198d04dceeed40ece22da84de0a.txt",
+    "asset": "review_assets/empty_002.png"
+  }
+]

@@ -1,0 +1,322 @@
+[
+  {
+    "group_id": "-162-_jpg.rf.d9d638f1c883e94ce23e7e0dd21626e9/G001",
+    "legacy_split": "train",
+    "image": "<data-root>/data\\lichi-maturity\\lichi-maturity\\lichi\\train\\images\\-162-_jpg.rf.d9d638f1c883e94ce23e7e0dd21626e9.jpg",
+    "label": "<data-root>/data\\lichi-maturity\\lichi-maturity\\lichi\\train\\labels\\-162-_jpg.rf.d9d638f1c883e94ce23e7e0dd21626e9.txt",
+    "asset": "review_assets/box_001.png",
+    "class_relation": "same-class",
+    "max_iou": 0.971055,
+    "min_iou": 0.971055,
+    "annotations": [
+      {
+        "index": 11,
+        "line_no": 12,
+        "class_id": 1,
+        "x": 0.42812500000000003,
+        "y": 0.41250000000000003,
+        "w": 0.078125,
+        "h": 0.1625,
+        "raw": "1 0.42812500000000003 0.41250000000000003 0.078125 0.1625"
+      },
+      {
+        "index": 14,
+        "line_no": 15,
+        "class_id": 1,
+        "x": 0.42890625000000004,
+        "y": 0.41171875,
+        "w": 0.07968750000000001,
+        "h": 0.1640625,
+        "raw": "1 0.42890625000000004 0.41171875 0.07968750000000001 0.1640625"
+      }
+    ]
+  },
+  {
+    "group_id": "-249-_jpg.rf.6042d3f11f17eda7eb62c0706a5b08b0/G001",
+    "legacy_split": "train",
+    "image": "<data-root>/data\\lichi-maturity\\lichi-maturity\\lichi\\train\\images\\-249-_jpg.rf.6042d3f11f17eda7eb62c0706a5b08b0.jpg",
+    "label": "<data-root>/data\\lichi-maturity\\lichi-maturity\\lichi\\train\\labels\\-249-_jpg.rf.6042d3f11f17eda7eb62c0706a5b08b0.txt",
+    "asset": "review_assets/box_002.png",
+    "class_relation": "same-class",
+    "max_iou": 1.0,
+    "min_iou": 1.0,
+    "annotations": [
+      {
+        "index": 6,
+        "line_no": 7,
+        "class_id": 0,
+        "x": 0.5320312500000001,
+        "y": 0.37421875000000004,
+        "w": 0.0546875,
+        "h": 0.06406250000000001,
+        "raw": "0 0.5320312500000001 0.37421875000000004 0.0546875 0.06406250000000001"
+      },
+      {
+        "index": 10,
+        "line_no": 11,
+        "class_id": 0,
+        "x": 0.5320312500000001,
+        "y": 0.37421875000000004,
+        "w": 0.0546875,
+        "h": 0.06406250000000001,
+        "raw": "0 0.5320312500000001 0.37421875000000004 0.0546875 0.06406250000000001"
+      }
+    ]
+  },
+  {
+    "group_id": "IMG_20230519_130735_jpg.rf.32d4bba2defeb3a4653ce22d7aae6d6c/G001",
+    "legacy_split": "train",
+    "image": "<data-root>/data\\lichi-maturity\\lichi-maturity\\lichi\\train\\images\\IMG_20230519_130735_jpg.rf.32d4bba2defeb3a4653ce22d7aae6d6c.jpg",
+    "label": "<data-root>/data\\lichi-maturity\\lichi-maturity\\lichi\\train\\labels\\IMG_20230519_130735_jpg.rf.32d4bba2defeb3a4653ce22d7aae6d6c.txt",
+    "asset": "review_assets/box_003.png",
+    "class_relation": "same-class",
+    "max_iou": 0.944444,
+    "min_iou": 0.944444,
+    "annotations": [
+      {
+        "index": 2,
+        "line_no": 3,
+        "class_id": 0,
+        "x": 0.45625000000000004,
+        "y": 0.6015625,
+        "w": 0.05625,
+        "h": 0.06875,
+        "raw": "0 0.45625000000000004 0.6015625 0.05625 0.06875"
+      },
+      {
+        "index": 4,
+        "line_no": 5,
+        "class_id": 0,
+        "x": 0.4546875,
+        "y": 0.6015625,
+        "w": 0.053125000000000006,
+        "h": 0.06875,
+        "raw": "0 0.4546875 0.6015625 0.053125000000000006 0.06875"
+      }
+    ]
+  },
+  {
+    "group_id": "IMG_20230621_114307_jpg.rf.ebdd27dd94768fba79f514d8cb8dbfc3/G001",
+    "legacy_split": "train",
+    "image": "<data-root>/data\\lichi-maturity\\lichi-maturity\\lichi\\train\\images\\IMG_20230621_114307_jpg.rf.ebdd27dd94768fba79f514d8cb8dbfc3.jpg",
+    "label": "<data-root>/data\\lichi-maturity\\lichi-maturity\\lichi\\train\\labels\\IMG_20230621_114307_jpg.rf.ebdd27dd94768fba79f514d8cb8dbfc3.txt",
+    "asset": "review_assets/box_004.png",
+    "class_relation": "same-class",
+    "max_iou": 0.988889,
+    "min_iou": 0.988889,
+    "annotations": [
+      {
+        "index": 6,
+        "line_no": 7,
+        "class_id": 1,
+        "x": 0.50390625,
+        "y": 0.7125,
+        "w": 0.1390625,
+        "h": 0.15625,
+        "raw": "1 0.50390625 0.7125 0.1390625 0.15625"
+      },
+      {
+        "index": 11,
+        "line_no": 12,
+        "class_id": 1,
+        "x": 0.503125,
+        "y": 0.7125,
+        "w": 0.140625,
+        "h": 0.15625,
+        "raw": "1 0.503125 0.7125 0.140625 0.15625"
+      }
+    ]
+  },
+  {
+    "group_id": "IMG_20230621_114451_jpg.rf.ea335e9532b7cb8cffc78f6c1625b8bb/G001",
+    "legacy_split": "train",
+    "image": "<data-root>/data\\lichi-maturity\\lichi-maturity\\lichi\\train\\images\\IMG_20230621_114451_jpg.rf.ea335e9532b7cb8cffc78f6c1625b8bb.jpg",
+    "label": "<data-root>/data\\lichi-maturity\\lichi-maturity\\lichi\\train\\labels\\IMG_20230621_114451_jpg.rf.ea335e9532b7cb8cffc78f6c1625b8bb.txt",
+    "asset": "review_assets/box_005.png",
+    "class_relation": "cross-class",
+    "max_iou": 0.973629,
+    "min_iou": 0.973629,
+    "annotations": [
+      {
+        "index": 6,
+        "line_no": 7,
+        "class_id": 1,
+        "x": 0.484375,
+        "y": 0.51328125,
+        "w": 0.1125,
+        "h": 0.1234375,
+        "raw": "1 0.484375 0.51328125 0.1125 0.1234375"
+      },
+      {
+        "index": 8,
+        "line_no": 9,
+        "class_id": 0,
+        "x": 0.48359375000000004,
+        "y": 0.5125000000000001,
+        "w": 0.11093750000000001,
+        "h": 0.12187500000000001,
+        "raw": "0 0.48359375000000004 0.5125000000000001 0.11093750000000001 0.12187500000000001"
+      }
+    ]
+  },
+  {
+    "group_id": "IMG_20230621_115942_jpg.rf.e98304d11658457fb72f6cf3bc5ee1e0/G001",
+    "legacy_split": "train",
+    "image": "<data-root>/data\\lichi-maturity\\lichi-maturity\\lichi\\train\\images\\IMG_20230621_115942_jpg.rf.e98304d11658457fb72f6cf3bc5ee1e0.jpg",
+    "label": "<data-root>/data\\lichi-maturity\\lichi-maturity\\lichi\\train\\labels\\IMG_20230621_115942_jpg.rf.e98304d11658457fb72f6cf3bc5ee1e0.txt",
+    "asset": "review_assets/box_006.png",
+    "class_relation": "same-class",
+    "max_iou": 0.951613,
+    "min_iou": 0.951613,
+    "annotations": [
+      {
+        "index": 6,
+        "line_no": 7,
+        "class_id": 1,
+        "x": 0.6195312500000001,
+        "y": 0.06875,
+        "w": 0.1453125,
+        "h": 0.09375,
+        "raw": "1 0.6195312500000001 0.06875 0.1453125 0.09375"
+      },
+      {
+        "index": 7,
+        "line_no": 8,
+        "class_id": 1,
+        "x": 0.61875,
+        "y": 0.06953125,
+        "w": 0.140625,
+        "h": 0.0921875,
+        "raw": "1 0.61875 0.06953125 0.140625 0.0921875"
+      }
+    ]
+  },
+  {
+    "group_id": "IMG_20230621_120150_jpg.rf.5c7478da15530792997feb737894ffa2/G001",
+    "legacy_split": "train",
+    "image": "<data-root>/data\\lichi-maturity\\lichi-maturity\\lichi\\train\\images\\IMG_20230621_120150_jpg.rf.5c7478da15530792997feb737894ffa2.jpg",
+    "label": "<data-root>/data\\lichi-maturity\\lichi-maturity\\lichi\\train\\labels\\IMG_20230621_120150_jpg.rf.5c7478da15530792997feb737894ffa2.txt",
+    "asset": "review_assets/box_007.png",
+    "class_relation": "same-class",
+    "max_iou": 1.0,
+    "min_iou": 1.0,
+    "annotations": [
+      {
+        "index": 3,
+        "line_no": 4,
+        "class_id": 1,
+        "x": 0.171875,
+        "y": 0.56796875,
+        "w": 0.09062500000000001,
+        "h": 0.060937500000000006,
+        "raw": "1 0.171875 0.56796875 0.09062500000000001 0.060937500000000006"
+      },
+      {
+        "index": 4,
+        "line_no": 5,
+        "class_id": 1,
+        "x": 0.171875,
+        "y": 0.56796875,
+        "w": 0.09062500000000001,
+        "h": 0.060937500000000006,
+        "raw": "1 0.171875 0.56796875 0.09062500000000001 0.060937500000000006"
+      }
+    ]
+  },
+  {
+    "group_id": "Lychee_5029_jpg.rf.70a6550025d7308340cb63bf057b536e/G001",
+    "legacy_split": "train",
+    "image": "<data-root>/data\\lichi-maturity\\lichi-maturity\\lichi\\train\\images\\Lychee_5029_jpg.rf.70a6550025d7308340cb63bf057b536e.jpg",
+    "label": "<data-root>/data\\lichi-maturity\\lichi-maturity\\lichi\\train\\labels\\Lychee_5029_jpg.rf.70a6550025d7308340cb63bf057b536e.txt",
+    "asset": "review_assets/box_008.png",
+    "class_relation": "same-class",
+    "max_iou": 1.0,
+    "min_iou": 1.0,
+    "annotations": [
+      {
+        "index": 13,
+        "line_no": 14,
+        "class_id": 2,
+        "x": 0.40390625,
+        "y": 0.46796875000000004,
+        "w": 0.0234375,
+        "h": 0.035937500000000004,
+        "raw": "2 0.40390625 0.46796875000000004 0.0234375 0.035937500000000004"
+      },
+      {
+        "index": 34,
+        "line_no": 35,
+        "class_id": 2,
+        "x": 0.40390625,
+        "y": 0.46796875000000004,
+        "w": 0.0234375,
+        "h": 0.035937500000000004,
+        "raw": "2 0.40390625 0.46796875000000004 0.0234375 0.035937500000000004"
+      }
+    ]
+  },
+  {
+    "group_id": "Lychee_5029_jpg.rf.70a6550025d7308340cb63bf057b536e/G002",
+    "legacy_split": "train",
+    "image": "<data-root>/data\\lichi-maturity\\lichi-maturity\\lichi\\train\\images\\Lychee_5029_jpg.rf.70a6550025d7308340cb63bf057b536e.jpg",
+    "label": "<data-root>/data\\lichi-maturity\\lichi-maturity\\lichi\\train\\labels\\Lychee_5029_jpg.rf.70a6550025d7308340cb63bf057b536e.txt",
+    "asset": "review_assets/box_009.png",
+    "class_relation": "same-class",
+    "max_iou": 1.0,
+    "min_iou": 1.0,
+    "annotations": [
+      {
+        "index": 14,
+        "line_no": 15,
+        "class_id": 2,
+        "x": 0.5046875000000001,
+        "y": 0.58828125,
+        "w": 0.018750000000000003,
+        "h": 0.035937500000000004,
+        "raw": "2 0.5046875000000001 0.58828125 0.018750000000000003 0.035937500000000004"
+      },
+      {
+        "index": 38,
+        "line_no": 39,
+        "class_id": 2,
+        "x": 0.5046875000000001,
+        "y": 0.58828125,
+        "w": 0.018750000000000003,
+        "h": 0.035937500000000004,
+        "raw": "2 0.5046875000000001 0.58828125 0.018750000000000003 0.035937500000000004"
+      }
+    ]
+  },
+  {
+    "group_id": "-86-_jpg.rf.0cec0a373fa347a89eefcba4d35c8259/G001",
+    "legacy_split": "val",
+    "image": "<data-root>/data\\lichi-maturity\\lichi-maturity\\lichi\\val\\images\\-86-_jpg.rf.0cec0a373fa347a89eefcba4d35c8259.jpg",
+    "label": "<data-root>/data\\lichi-maturity\\lichi-maturity\\lichi\\val\\labels\\-86-_jpg.rf.0cec0a373fa347a89eefcba4d35c8259.txt",
+    "asset": "review_assets/box_010.png",
+    "class_relation": "same-class",
+    "max_iou": 0.967415,
+    "min_iou": 0.967415,
+    "annotations": [
+      {
+        "index": 0,
+        "line_no": 1,
+        "class_id": 1,
+        "x": 0.48203125,
+        "y": 0.5203125000000001,
+        "w": 0.2109375,
+        "h": 0.084375,
+        "raw": "1 0.48203125 0.5203125000000001 0.2109375 0.084375"
+      },
+      {
+        "index": 1,
+        "line_no": 2,
+        "class_id": 1,
+        "x": 0.48203125,
+        "y": 0.51953125,
+        "w": 0.21406250000000002,
+        "h": 0.08281250000000001,
+        "raw": "1 0.48203125 0.51953125 0.21406250000000002 0.08281250000000001"
+      }
+    ]
+  }
+]

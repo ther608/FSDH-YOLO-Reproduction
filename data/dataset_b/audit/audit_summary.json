@@ -1,0 +1,50 @@
+{
+  "schema": "dataset_b_v4_protocol_audit_v1",
+  "source": "<data-root>/data\\lichi-maturity\\lichi-maturity\\lichi",
+  "source_images": 1649,
+  "offline_augmentations_excluded_by_protocol": 154,
+  "retained_original_candidates_before_human_review": 1495,
+  "box_candidate_groups_iou_gte_090": 10,
+  "box_candidate_relation_counts": {
+    "same-class": 9,
+    "cross-class": 1
+  },
+  "empty_label_images_requiring_review": 2,
+  "class_instances_before_offline_exclusion": {
+    "green": 5813,
+    "half": 1251,
+    "red": 8598,
+    "young": 4581
+  },
+  "image_constraint_edges": {
+    "sequential_scene_constraint": 723,
+    "near_candidate": 7
+  },
+  "group_count_before_human_review": 1188,
+  "multi_image_group_count": 49,
+  "largest_group_sizes": [
+    123,
+    66,
+    54,
+    6,
+    6,
+    5,
+    4,
+    3,
+    3,
+    3
+  ],
+  "human_review_complete": true,
+  "human_review_result": {
+    "box_groups_reviewed": 10,
+    "box_groups_keep_one": 10,
+    "duplicate_box_rows_removed": 10,
+    "empty_label_images_reviewed": 2,
+    "empty_label_images_retained_as_true_negatives": 2
+  },
+  "final_v4_materialization_allowed": true,
+  "materialized_outputs": {
+    "raw": "<data-root>/data\\lichi-maturity\\lichi-maturity\\lichi_701515_groupaware_clean_v4_raw",
+    "augmented": "<data-root>/data\\lichi-maturity\\lichi-maturity\\lichi_701515_groupaware_clean_v4_aug"
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "policy": {
+    "reviewed_boxes": "use manually exported cleaned labels",
+    "images": "do not delete automatically detected similar images",
+    "group_constraints": [
+      "all near_duplicate_all_pairs.csv candidates",
+      "same-batch sequential candidates with gray32_mae <= 0.1"
+    ],
+    "split_ratios": {
+      "train": 0.7,
+      "val": 0.15,
+      "test": 0.15
+    },
+    "seed": 20260731
+  },
+  "source_image_count": 842,
+  "group_count": 672,
+  "multi_image_group_count": 32,
+  "largest_group_sizes": [
+    38,
+    28,
+    26,
+    14,
+    12,
+    9,
+    7,
+    6,
+    5,
+    4
+  ],
+  "constraint_edge_counts": {
+    "near_candidate": 349,
+    "sequential_scene_constraint": 235
+  },
+  "split_stats": {
+    "train": {
+      "images": 590,
+      "objects": 11083,
+      "class_0": 3835,
+      "class_1": 2601,
+      "class_2": 4647
+    },
+    "val": {
+      "images": 126,
+      "objects": 2690,
+      "class_0": 909,
+      "class_1": 657,
+      "class_2": 1124
+    },
+    "test": {
+      "images": 126,
+      "objects": 2775,
+      "class_0": 957,
+      "class_1": 653,
+      "class_2": 1165
+    }
+  },
+  "objective_score": 0.16680514338735275,
+  "validation": {
+    "group_cross_split_violations": 0,
+    "constraint_edge_cross_split_violations": 0,
+    "constraint_edges_checked": 584
+  },
+  "exact_hash_cross_split_counts": {
+    "train_val": 0,
+    "train_test": 0,
+    "val_test": 0
+  }
+}

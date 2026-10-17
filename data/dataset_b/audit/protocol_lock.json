@@ -1,0 +1,61 @@
+{
+  "schema": "dataset_b_v4_protocol_lock_v1",
+  "source": "<data-root>/data\\lichi-maturity\\lichi-maturity\\lichi",
+  "protocol_origin": "Dataset A frozen data-cleaning and group-aware split rules",
+  "allowed_inputs": [
+    "source images",
+    "YOLO labels",
+    "filename-derived acquisition metadata"
+  ],
+  "prohibited_inputs": [
+    "model predictions",
+    "validation metrics",
+    "test metrics",
+    "prior experiment rankings"
+  ],
+  "offline_augmentation_policy": "exclude filename-identifiable source-provided flips/rotations before grouping; any v4 augmentation must be generated after the split and only from training originals",
+  "box_review": {
+    "scope": "all classes within the same image",
+    "iou_threshold_gte": 0.9,
+    "automatic_deletion": false,
+    "required_human_actions": [
+      "keep_one with source line number",
+      "keep_all"
+    ]
+  },
+  "image_grouping": {
+    "exact_sha256": "group, do not auto-delete images",
+    "near_duplicate": {
+      "phash_hamming_lte": 10,
+      "gray32_normalized_mae_lte": 0.06
+    },
+    "same_sequence": {
+      "filename_derived_gap_lte": 3,
+      "gray32_normalized_mae_lte": 0.1,
+      "phash_condition": null
+    },
+    "component_policy": "every connected component is an indivisible split unit"
+  },
+  "split": {
+    "ratios": {
+      "train": 0.7,
+      "val": 0.15,
+      "test": 0.15
+    },
+    "seed": 20260731,
+    "trials": 1000,
+    "balanced_features": [
+      "image count",
+      "object count",
+      "green",
+      "half",
+      "red",
+      "young"
+    ],
+    "relative_squared_error_weights": {
+      "image_count": 5.0,
+      "object_count": 1.0,
+      "each_class_count": 2.0
+    }
+  }
+}

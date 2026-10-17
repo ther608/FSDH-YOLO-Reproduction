@@ -1,0 +1,71 @@
+{
+  "schema": "external_detection_metrics_v2",
+  "model": "FSDH-YOLO-n",
+  "seed": 0,
+  "checkpoint": "<original-workspace>\\runs\\detect\\paper_dataset_b_groupaware_clean_v4_aug_common_v2\\dsB_groupaware_clean_v4_aug__comparison__fsdh_yolo_n__seed0\\weights\\best.pt",
+  "annotations": "<original-workspace>\\external_configs\\dataset_b_native4_v4\\instances_test.json",
+  "predictions": "<original-workspace>\\runs\\common_eval\\paper_dataset_b_groupaware_clean_v4_aug_common_v2\\DatasetB4_FSDH_YOLO\\seed0__test_predictions_coco.json",
+  "split": "test",
+  "ground_truth": {
+    "sha256": "667b9746d3478be36a324e8093a0abfb03b09c99c7b12f461ad8c20e50dbbb4f",
+    "images": 212,
+    "annotations": 3263,
+    "categories": [
+      "green",
+      "half",
+      "red",
+      "young"
+    ]
+  },
+  "protocol": {
+    "imgsz": 640,
+    "prediction_confidence_floor": 0.001,
+    "nms_iou": 0.7,
+    "max_det": 300,
+    "coco_max_dets": [
+      1,
+      10,
+      300
+    ],
+    "small_area_scale": 1.0,
+    "small_area": "original-image area < 1024 pixels",
+    "small_metric_name": "AP_small_COCO"
+  },
+  "overall": {
+    "precision": 0.7980691305496221,
+    "recall": 0.8348843886293449,
+    "max_mean_f1": 0.8160617559743905,
+    "confidence": 0.389,
+    "definition": "macro class P/R at confidence maximizing mean class F1, class-aware IoU>=0.5",
+    "map50_95": 0.5968275042395507,
+    "map50": 0.8399328909742618,
+    "ap75": 0.6984509900825814,
+    "ap_small": 0.3279485106406088,
+    "ar300": 0.6931330083253491
+  },
+  "per_class": {
+    "green": {
+      "ap50_95": 0.6624401288879359,
+      "ap50": 0.9026758249934237
+    },
+    "half": {
+      "ap50_95": 0.5272636415770241,
+      "ap50": 0.6491168584507278
+    },
+    "red": {
+      "ap50_95": 0.5530776211741338,
+      "ap50": 0.8671702562167386
+    },
+    "young": {
+      "ap50_95": 0.6445286253191087,
+      "ap50": 0.9407686242361574
+    }
+  },
+  "quality": {
+    "corr_score_iou_tp": 0.5692371918741057,
+    "ece_iou50": 0.021835683451333413,
+    "ece_bins": 15,
+    "predictions": 16779,
+    "true_positive_matches": 3157
+  }
+}
