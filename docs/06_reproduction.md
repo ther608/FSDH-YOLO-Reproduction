@@ -44,8 +44,10 @@ PYTHONPATH=src python -c "from ultralytics import YOLO; m=YOLO('configs/yolo11n_
 
 ### 2.1 Dataset A
 
-Get the RGB subset from Zhang et al. (arXiv:2510.16800) and reconstruct the
-fixed split with `data/dataset_a/split_manifest.csv`:
+Get the RGB subset from the Mendeley Data record of Zhang et al.
+(doi:10.17632/6svnttj9g4.2, v2; v1: doi:10.17632/6svnttj9g4.1; paper:
+arXiv:2510.16800) and reconstruct the fixed split with
+`data/dataset_a/split_manifest.csv`:
 
 ```text
 <Dataset A root>/

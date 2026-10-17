@@ -9,7 +9,7 @@ This is the quick-reference companion to `docs/03_dataset_protocol.md`.
 | Manuscript name | Orchard litchi maturity dataset | lichi-maturity (cross-dataset) |
 | Repo shorthand | `dataset_a` | `dataset_b` |
 | Subset directory | `lychee_groupaware_clean_aug_v2` | `lichi_701515_groupaware_clean_v4_aug` |
-| Public source | Zhang et al., arXiv:2510.16800 (RGB-D lychee) | Zhao, Mendeley Data V1, doi:10.17632/c3rk9gv4w9.1 |
+| Public source | Zhang et al.; data: Mendeley Data doi:10.17632/6svnttj9g4.2 (v2; v1 .1); paper: arXiv:2510.16800 | Zhao, Mendeley Data V1, doi:10.17632/c3rk9gv4w9.1 |
 | Original images | 878 (RGB) | 1,649 |
 | After cleaning | 842 outdoor orchard | 1,495 |
 | Classes | 3 | 4 (native, not merged) |

@@ -1,8 +1,11 @@
 # Dataset A fixed split / cleaning / grouping manifests
 
 Source: Zhang et al., *An RGB-D image dataset for lychee detection and maturity
-classification for robotic harvesting*, arXiv:2510.16800. This work uses the
-**RGB subset** only (no depth/IR/LiDAR).
+classification for robotic harvesting*. The dataset is distributed via Mendeley
+Data: https://doi.org/10.17632/6svnttj9g4.2 (version 2; version 1:
+https://doi.org/10.17632/6svnttj9g4.1). The paper is arXiv:2510.16800. This work
+uses the **RGB subset** only (no depth/IR/LiDAR). The local inventory matches the
+v2 11,414-image release; confirm the downloaded version before submission.
 
 **Images are not in this repository.** This directory keeps the fixed split,
 group assignment, constraint edges and augmentation log.

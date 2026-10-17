@@ -12,7 +12,7 @@ manifests in `data/`. **Authority order**: `data/*/build_summary.json` and
 
 | Item | Value |
 |---|---|
-| Source | Zhang et al., *An RGB-D image dataset for lychee detection and maturity classification for robotic harvesting*, arXiv:2510.16800 |
+| Source | Zhang et al., *An RGB-D image dataset for lychee detection and maturity classification for robotic harvesting*. Data: Mendeley Data, doi:10.17632/6svnttj9g4.2 (v2; v1: doi:10.17632/6svnttj9g4.1); paper: arXiv:2510.16800 |
 | Used part | RGB subset only (no depth/IR/LiDAR) |
 | Original images | 878 |
 | Removed | 36 indoor tabletop images |

@@ -46,8 +46,9 @@ Data availability
 
 The two datasets used in this study are publicly available and are not
 redistributed in this work. Dataset A is the RGB subset of the RGB-D lychee
-dataset of Zhang et al. (2025), available at arXiv:2510.16800
-(https://doi.org/10.48550/arXiv.2510.16800). Dataset B is the lichi-maturity
+dataset of Zhang et al. (2025), distributed via Mendeley Data
+(https://doi.org/10.17632/6svnttj9g4.2; v1: https://doi.org/10.17632/6svnttj9g4.1);
+the study paper is arXiv:2510.16800. Dataset B is the lichi-maturity
 dataset of Zhao (2025), available at Mendeley Data
 (https://doi.org/10.17632/c3rk9gv4w9.1).
 
@@ -68,6 +69,13 @@ Code and trained checkpoints are released under AGPL-3.0; documentation, split
 manifests, annotations and results are released under CC BY 4.0. Dataset images
 remain under the licenses of the original dataset providers.
 ```
+
+**Version note for Dataset A.** Mendeley v2 is DOI `10.17632/6svnttj9g4.2`
+(released 5 January 2026); v1 is DOI `10.17632/6svnttj9g4.1` (21 October 2025).
+The local copy used for this repository contains 11,414 images (878 raw RGB,
+8,780 augmented RGB, 1,756 depth), matching the v2 inventory, and was downloaded
+in June 2026. The authors should still confirm the actual download version; if
+v1 was used, replace `.2` with `.1` in the statement.
 
 ### Supplementary materials
 
@@ -126,8 +134,9 @@ Data availability and supplementary materials
 
 The two datasets used in this study are publicly available and are not
 redistributed. Dataset A is the RGB subset of the RGB-D lychee dataset of Zhang
-et al. (2025), available at arXiv:2510.16800
-(https://doi.org/10.48550/arXiv.2510.16800). Dataset B is the lichi-maturity
+et al. (2025), distributed via Mendeley Data
+(https://doi.org/10.17632/6svnttj9g4.2; v1: https://doi.org/10.17632/6svnttj9g4.1);
+the study paper is arXiv:2510.16800. Dataset B is the lichi-maturity
 dataset of Zhao (2025), available at Mendeley Data
 (https://doi.org/10.17632/c3rk9gv4w9.1).
 
@@ -166,7 +175,8 @@ so the statement is still discoverable.
 |---|---|---|
 | `https://github.com/ther608/FSDH-YOLO-Reproduction` | Source, configs, train/eval scripts, fixed splits, cleaning/grouping/filename manifests, annotations, 12 best.pt, results | Dataset images, Android project |
 | `https://github.com/ther608/FSDH-YOLO-Supplementary` | Appendix C per-seed results, evaluation protocol, Android app, ONNX, raw on-device records | Training code, PT checkpoints, dataset images |
-| Dataset A DOI | `https://doi.org/10.48550/arXiv.2510.16800` | Images not redistributed |
+| Dataset A data | `https://doi.org/10.17632/6svnttj9g4.2` (v2; v1: `...1`) | Images not redistributed |
+| Dataset A paper | `https://doi.org/10.48550/arXiv.2510.16800` | Reference only |
 | Dataset B DOI | `https://doi.org/10.17632/c3rk9gv4w9.1` | Images not redistributed |
 
 ---

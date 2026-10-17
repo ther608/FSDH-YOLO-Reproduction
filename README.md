@@ -265,10 +265,13 @@ CEA manuscript (docx). Summary:
 
 ## 6. Data sources and license
 
-- **Dataset A**: Zhang et al., *An RGB-D image dataset for lychee detection and
-  maturity classification for robotic harvesting*, arXiv:2510.16800
-  (`doi:10.48550/arXiv.2510.16800`). This work uses the RGB subset: 36 indoor
-  tabletop images removed, 842 outdoor orchard images retained.
+- **Dataset A**: RGB subset of the RGB-D lychee dataset of Zhang et al. (2025).
+  Data: Mendeley Data, `https://doi.org/10.17632/6svnttj9g4.2` (version 2;
+  version 1: `https://doi.org/10.17632/6svnttj9g4.1`). Paper: arXiv:2510.16800
+  (`https://doi.org/10.48550/arXiv.2510.16800`). This work uses the RGB subset:
+  36 indoor tabletop images removed, 842 outdoor orchard images retained.
+  The local copy matches the v2 11,414-image inventory; confirm the actual
+  downloaded version before submission.
 - **Dataset B**: Zhao, *lichi-maturity*, Mendeley Data V1,
   `doi:10.17632/c3rk9gv4w9.1`.
 

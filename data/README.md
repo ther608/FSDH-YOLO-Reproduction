@@ -13,7 +13,7 @@ datasets:
 
 | Dataset | Source | Access |
 |---|---|---|
-| A | Zhang et al., *An RGB-D image dataset for lychee detection and maturity classification for robotic harvesting*, arXiv:2510.16800 | Obtain from the original public source; this repository uses the RGB subset only |
+| A | Zhang et al., *An RGB-D image dataset for lychee detection and maturity classification for robotic harvesting*. Data: Mendeley Data, doi:10.17632/6svnttj9g4.2 (v2; v1: doi:10.17632/6svnttj9g4.1); paper: arXiv:2510.16800 | Obtain from Mendeley Data; this repository uses the RGB subset only |
 | B | Zhao, *lichi-maturity*, Mendeley Data V1, `doi:10.17632/c3rk9gv4w9.1` | Obtain from Mendeley Data |
 
 ## Why images are not uploaded
