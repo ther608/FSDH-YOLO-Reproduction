@@ -176,6 +176,9 @@ class SPDConv(nn.Module):
 class SPOConv(nn.Module):
     """Standardized space-to-depth downsampling for the controlled study.
 
+    Paper name: FSDConv (Feature-preserving Space-to-Depth Convolution).
+    Code class name: SPOConv (kept for compatibility with released checkpoints).
+
     PixelUnshuffle performs the lossless 2x spatial-to-channel rearrangement;
     the project-standard Conv then applies Conv2d, BatchNorm2d and SiLU with
     stride 1. SPDConv remains unchanged so completed checkpoints and the

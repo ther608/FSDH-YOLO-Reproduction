@@ -19,6 +19,7 @@ the fixed split, cleaning/grouping manifests, audit and augmentation records.
 | `dataset_b_v4_verification.json` | Independent verification PASS |
 | `augmentation_summary.json` | 4,284 images / 51,728 GT / class and operation counts |
 | `augmentation_log.csv` | 3,213 records (1,071 x 3 variants) |
+| `filename_manifest.csv` | Complete filename list: split, group, source image, augmentation variant/category/operation/parameters, class counts and SHA256 |
 
 ## Fixed numbers
 

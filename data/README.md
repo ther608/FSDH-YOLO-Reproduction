@@ -33,6 +33,7 @@ data/
 |   |-- split_manifest.csv
 |   |-- group_constraint_edges.csv
 |   |-- augmentation_log.csv
+|   |-- filename_manifest.csv
 |   |-- augmentation_scheme.txt
 |   `-- README.md
 `-- dataset_b/
@@ -47,6 +48,7 @@ data/
     |-- dataset_b_v4_verification.json
     |-- augmentation_summary.json
     |-- augmentation_log.csv
+    |-- filename_manifest.csv
     `-- README.md
 ```
 
@@ -58,4 +60,5 @@ See `docs/03_dataset_protocol.md` section 3.3:
 2. copy/hardlink into train/val/test according to `new_split`;
 3. generate training-only augmentation from the per-image log;
 4. leave val/test unchanged;
-5. verify counts with `group_manifest.csv`.
+5. verify counts with `group_manifest.csv`;
+6. use `filename_manifest.csv` for the complete filename list and augmentation metadata.

@@ -43,6 +43,16 @@ per-directory READMEs + `PROVENANCE.md` + machine-readable manifests. The
 difference is that this repository adds the **training code, PyTorch checkpoints
 and fixed split manifests**.
 
+### Naming aliases
+
+- **FSDConv** (paper) = **`SPOConv`** (code class / checkpoint key).
+- **SHEB** (paper) = **`SHAB`** (code class / checkpoint key).
+
+The aliases are retained because the released `.pt` checkpoints store the code
+names. They refer to the same modules; see the comments in
+`configs/yolo11n_FSDConv-SHAB.yaml` and the class docstrings in
+`src/ultralytics/nn/modules/`.
+
 ---
 
 ## 1. Headline results (paper protocol, mean +/- sample SD over 3 seeds)
@@ -100,7 +110,7 @@ FSDH-YOLO-Reproduction/
 |-- annotations/                    # frozen test-set COCO annotations
 |-- weights/                        # 12 best.pt + yolo11n.pt + MANIFEST.csv + SHA256SUMS
 |-- results/                        # paper tables, per-seed CSV, Common Evaluator JSON, Appendix C
-`-- docs/                           # 01-09 audit/protocol/weights/reproduction/source/results docs
+`-- docs/                           # 01-12 audit, protocol, manifests, manuscript fix, data availability
 ```
 
 Key directories:
@@ -111,11 +121,11 @@ Key directories:
 | `configs/` | Main FSDH-YOLO YAML + ablation/branch/SPD/control YAMLs |
 | `train/` | Paper training entry, native val, unified A/B runner |
 | `eval/` | Framework-neutral Common Evaluator, latency benchmark, statistical and data-build scripts |
-| `data/` | Per-file fixed split, group assignment, cleaning/grouping edges, augmentation logs |
+| `data/` | Per-file fixed split, group assignment, cleaning/grouping edges, augmentation logs, complete filename manifests |
 | `annotations/` | Frozen COCO test annotations (A: 126/2,775; B: 212/3,263) |
 | `weights/` | 12 paper `best.pt` + pretrained `yolo11n.pt` + manifests |
 | `results/` | Per-seed CSV, mean/SD, Common Evaluator JSON, Appendix C, latency |
-| `docs/` | Coverage audit, existing repos, dataset protocol, group summary, weights, reproduction, known issues, source inventory, results index |
+| `docs/` | Coverage audit, existing repos, dataset protocol, group summary, weights, reproduction, known issues, source inventory, results index, filename manifests, B.2 fix, data availability |
 
 ---
 
@@ -248,7 +258,8 @@ CEA manuscript (docx). Summary:
 - Version 3.23 has fixed most issues that the 3.12 ledger flagged against 3.13;
 - One last-digit discrepancy remains: Appendix B.2 `SPDConv+SHEB` prints
   `66.649+/-0.334`; the per-seed recomputation is `66.649+/-0.335` (the 3.12
-  ledger also has 0.335).
+  ledger also has 0.335). Word correction steps and comment text:
+  `docs/11_manuscript_fix_B2.md`.
 
 ---
 
@@ -266,7 +277,8 @@ modified Ultralytics 8.4.11 source tree). Documentation, split/cleaning
 manifests, annotations and results are released under **CC BY 4.0**
 (`LICENSE-docs`). `results/Appendix_C/` is MIT-licensed, copied from the
 Supplementary repository; see `LICENSES/FSDH-YOLO-Supplementary-MIT.txt`.
-Dataset images remain under their original licenses.
+Dataset images remain under their original licenses. Data availability and
+Supplementary statements (separate vs merged) are in `docs/12_data_availability.md`.
 
 ---
 

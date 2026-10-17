@@ -12,7 +12,8 @@ Per-seed: 66.701 / 66.291 / 66.954; mean = 66.648666...; sample SD (ddof=1)
 = 0.334584... -> **0.335**.
 
 The row label was fixed in 3.23 from the old `FSDConv+SHEB` to `SPDConv+SHEB`;
-only the SD remains. Suggested action: change the cell to `+/-0.335`.
+only the SD remains. Suggested action: change the cell to `+/-0.335`. Word steps and comment text:
+`docs/11_manuscript_fix_B2.md`.
 
 ## 2. Dataset A annotation lacks `info.split`
 

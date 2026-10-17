@@ -46,6 +46,9 @@ def _reduced_channels(channels, reduction=4):
 class SHAB(nn.Module):
     """Spatial Hierarchy Attention Block with selectable local/mid/global branches.
 
+    Paper name: SHEB (Spatial Hierarchy Enhancement Block).
+    Code class name: SHAB (kept for compatibility with released checkpoints).
+
     Maintains channel and spatial invariance (C→C, H×W→H×W).
 
     Architecture:

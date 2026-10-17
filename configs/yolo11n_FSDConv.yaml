@@ -1,3 +1,4 @@
+# Naming aliases: FSDConv (paper) = SPOConv (code class); SHEB (paper) = SHAB (code class).
 # YOLO11n + FSDConv@Input.
 # Paper name: Feature-preserving Space-to-Depth Convolution (FSDConv).
 # Implementation class remains SPOConv for compatibility with completed checkpoints.

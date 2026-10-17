@@ -16,6 +16,7 @@ group assignment, constraint edges and augmentation log.
 | `split_manifest.csv` | 842 images: `group_id, new_split, old_split, batch, image_id, filename, class_0..2, image_sha256` |
 | `group_constraint_edges.csv` | 584 grouping edges (near / sequential) |
 | `augmentation_log.csv` | 1,770 training augmentation records (590 x 3 variants, with per-image parameters) |
+| `filename_manifest.csv` | Complete filename list: split, group, source image, augmentation variant/category/operation/parameters, class counts and SHA256 |
 | `augmentation_scheme.txt` | Three augmentation categories and parameter ranges |
 
 ## Fixed numbers

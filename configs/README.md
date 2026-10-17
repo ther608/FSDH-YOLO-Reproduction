@@ -1,5 +1,10 @@
 # Model configs
 
+**Naming aliases.** In the paper, the input module is **FSDConv** and the
+hierarchy block is **SHEB**. In code and released checkpoints they are
+**`SPOConv`** and **`SHAB`**, respectively. The aliases are intentional and are
+kept for checkpoint compatibility; they are not different modules.
+
 These YAMLs are a paper-related subset of
 `src/ultralytics/cfg/models/11/`. Training works with either this directory or
 the source package; contents are identical.

@@ -1,3 +1,4 @@
+# Naming aliases: FSDConv (paper) = SPOConv (code class); SHEB (paper) = SHAB (code class).
 # YOLO11n + FSDConv@Input + SHAB-M at P3/P4/P5.
 # Confirmatory configuration used to test whether SHAB's mid-range branch is
 # sufficient after feature-preserving space-to-depth downsampling.

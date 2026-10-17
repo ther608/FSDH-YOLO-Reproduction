@@ -120,6 +120,7 @@ from .advanced import (
     PConv,
     RAAM,
     SPDConv,
+    # Paper alias: FSDConv -> SPOConv
     SPOConv,
     WaveletDown,
     WaveletEnhance,
@@ -139,6 +140,7 @@ from .small_object_modules import (
     MultiScaleDWConv,
     ReceptiveFieldBlock,
     RepConvBlock,
+    # Paper alias: SHEB -> SHAB
     SHAB,
 )
 from .partial_attention import (

@@ -1,3 +1,4 @@
+# Naming aliases: FSDConv (paper) = SPOConv (code class); SHEB (paper) = SHAB (code class).
 # SHAB branch-combination ablation: local + global branches at P3/P4/P5.
 nc: 3
 scale: n

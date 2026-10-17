@@ -1903,6 +1903,7 @@ def parse_model(d, ch, verbose=True):
                 c2 = make_divisible(min(c2, max_channels) * width, 8)
             args = [c1, c2, *args[1:]]
 
+        # Paper aliases: SPOConv = FSDConv, SHAB = SHEB.
         elif m in frozenset({SPDConv, SPOConv}):
             c2 = make_divisible(min(args[0], max_channels) * width, 8)
             c1 = ch[f]

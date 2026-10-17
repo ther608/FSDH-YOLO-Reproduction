@@ -149,7 +149,7 @@ correct. The row label was fixed from the old `FSDConv+SHEB` to
 
 > Suggested action: change the cell to `66.649+/-0.335` before submission.
 > This matches ledger line 553 and Issue 1 in the Supplementary repository's
-> `reproduction_notes`.
+> `reproduction_notes`. Step-by-step Word instructions: `docs/11_manuscript_fix_B2.md`.
 
 ---
 

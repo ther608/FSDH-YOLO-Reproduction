@@ -11,6 +11,9 @@
 | `07_known_issues.md` | B.2 last digit, annotation split field, 3.23 vs 3.13, archival paths, metric caveats |
 | `08_source_inventory.md` | FSDConv/SHEB code locations, registration, configs, train/eval/data scripts, run mapping |
 | `09_results_index.md` | Paper table <-> result file <-> checkpoint |
+| `10_filename_manifests.md` | Complete filename lists for both datasets, with augmentation category/operation/parameters parsed from names |
+| `11_manuscript_fix_B2.md` | Word steps and comment text for the Appendix B.2 SD correction (0.334 -> 0.335) |
+| `12_data_availability.md` | Ready-to-paste Data availability and Supplementary statements, plus separate-vs-merged analysis |
 
 Recommended reading:
 

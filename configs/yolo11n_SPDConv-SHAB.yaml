@@ -1,3 +1,4 @@
+# Naming aliases: FSDConv (paper) = SPOConv (code class); SHEB (paper) = SHAB (code class).
 # YOLO11n + original SPDConv at the input stem + full SHAB at P3/P4/P5.
 # Controlled counterpart of yolo11n_FSDConv-SHAB.yaml: only SPDConv vs FSDConv differs.
 nc: 3
