@@ -70,12 +70,12 @@ manifests, annotations and results are released under CC BY 4.0. Dataset images
 remain under the licenses of the original dataset providers.
 ```
 
-**Version note for Dataset A.** Mendeley v2 is DOI `10.17632/6svnttj9g4.2`
-(released 5 January 2026); v1 is DOI `10.17632/6svnttj9g4.1` (21 October 2025).
-The local copy used for this repository contains 11,414 images (878 raw RGB,
-8,780 augmented RGB, 1,756 depth), matching the v2 inventory, and was downloaded
-in June 2026. The authors should still confirm the actual download version; if
-v1 was used, replace `.2` with `.1` in the statement.
+**Confirmed version for Dataset A.** Mendeley v2 is DOI
+`10.17632/6svnttj9g4.2` (issued 5 January 2026; modified 4 January 2026); v1 is
+DOI `10.17632/6svnttj9g4.1` (21 October 2025). The local copy used for this
+repository is v2: its four zip archives contain entries dated 2026-01-04,
+matching the v2 modification date, and were downloaded on 8 June 2026. The v2
+inventory is 11,414 images (878 raw RGB, 8,780 augmented RGB, 1,756 depth).
 
 ### Supplementary materials
 

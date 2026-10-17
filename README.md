@@ -270,8 +270,8 @@ CEA manuscript (docx). Summary:
   version 1: `https://doi.org/10.17632/6svnttj9g4.1`). Paper: arXiv:2510.16800
   (`https://doi.org/10.48550/arXiv.2510.16800`). This work uses the RGB subset:
   36 indoor tabletop images removed, 842 outdoor orchard images retained.
-  The local copy matches the v2 11,414-image inventory; confirm the actual
-  downloaded version before submission.
+  The local copy is v2: its zip entries are dated 2026-01-04, matching the v2
+  modification date, and the files were downloaded in June 2026.
 - **Dataset B**: Zhao, *lichi-maturity*, Mendeley Data V1,
   `doi:10.17632/c3rk9gv4w9.1`.
 
