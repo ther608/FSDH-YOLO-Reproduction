@@ -1,0 +1,17 @@
+# FSDH-YOLO reproduction environment
+# PyTorch must be installed with the CUDA wheel matching the target machine.
+# Example (CUDA 12.8): pip install torch==2.10.0 torchvision --index-url https://download.pytorch.org/whl/cu128
+torch==2.10.0
+torchvision
+numpy
+opencv-python
+pillow
+pyyaml
+scipy
+matplotlib
+pandas
+psutil
+py-cpuinfo
+tqdm
+requests
+pycocotools

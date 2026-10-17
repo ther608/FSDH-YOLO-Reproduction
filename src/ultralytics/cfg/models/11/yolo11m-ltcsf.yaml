@@ -1,0 +1,66 @@
+# Ultralytics AGPL-3.0 License - https://ultralytics.com/license
+
+# YOLO11m-LTCSF: YOLO11m with Lightweight Transformer Cross-Scale Fusion
+# Inserts LTCSF between the Neck P3/P4/P5 features and the Detect head.
+# LTCSF applies scale-dimension attention (3 scale tokens per spatial
+# position) to fuse cross-scale information without global self-attention.
+#
+# Architecture:
+#   Backbone: YOLO11m (standard)
+#   Neck:     YOLO11m FPN+PAN (standard)
+#   Fusion:   LTCSF(P3, P4, P5) → P3', P4', P5'
+#   Head:     YOLO11 Detect(P3', P4', P5')
+#
+# Model docs: https://docs.ultralytics.com/models/yolo11
+
+# Parameters
+nc: 10 # number of classes (VisDrone)
+scale: m # force m scale
+scales: # model compound scaling constants — ONLY 'm' scale
+  # [depth, width, max_channels]
+  m: [0.50, 1.00, 512]
+
+# YOLO11m-LTCSF backbone (standard YOLO11m)
+backbone:
+  # [from, repeats, module, args]
+  - [-1, 1, Conv, [64, 3, 2]] # 0-P1/2
+  - [-1, 1, Conv, [128, 3, 2]] # 1-P2/4
+  - [-1, 2, C3k2, [256, False, 0.25]]
+  - [-1, 1, Conv, [256, 3, 2]] # 3-P3/8
+  - [-1, 2, C3k2, [512, False, 0.25]]
+  - [-1, 1, Conv, [512, 3, 2]] # 5-P4/16
+  - [-1, 2, C3k2, [512, True]]
+  - [-1, 1, Conv, [1024, 3, 2]] # 7-P5/32
+  - [-1, 2, C3k2, [1024, True]]
+  - [-1, 1, SPPF, [1024, 5]] # 9
+  - [-1, 2, C2PSA, [1024]] # 10
+
+# YOLO11m-LTCSF head (standard FPN+PAN + LTCSF fusion)
+head:
+  - [-1, 1, nn.Upsample, [None, 2, "nearest"]]
+  - [[-1, 6], 1, Concat, [1]] # cat backbone P4
+  - [-1, 2, C3k2, [512, False]] # 13
+
+  - [-1, 1, nn.Upsample, [None, 2, "nearest"]]
+  - [[-1, 4], 1, Concat, [1]] # cat backbone P3
+  - [-1, 2, C3k2, [256, False]] # 16 (P3/8-small)
+
+  - [-1, 1, Conv, [256, 3, 2]]
+  - [[-1, 13], 1, Concat, [1]] # cat head P4
+  - [-1, 2, C3k2, [512, False]] # 19 (P4/16-medium)
+
+  - [-1, 1, Conv, [512, 3, 2]]
+  - [[-1, 10], 1, Concat, [1]] # cat head P5
+  - [-1, 2, C3k2, [1024, True]] # 22 (P5/32-large)
+
+  # === LTCSF: Lightweight Transformer Cross-Scale Fusion ===
+  # Fuses [P3(16), P4(19), P5(22)] using scale-dimension attention
+  # Outputs [P3_fused, P4_fused, P5_fused] as a list
+  - [[16, 19, 22], 1, LTCSF, [128, 4, 2.0, 0.0]] # 23
+
+  # Unpack LTCSF list output into three individual tensors for Detect
+  - [23, 1, FeatureIndex, [0]] # 24 = P3_fused
+  - [23, 1, FeatureIndex, [1]] # 25 = P4_fused
+  - [23, 1, FeatureIndex, [2]] # 26 = P5_fused
+
+  - [[24, 25, 26], 1, Detect, [nc]] # 27 Detect(P3_fused, P4_fused, P5_fused)

@@ -1,0 +1,50 @@
+# Ultralytics YOLO11s with SwinLiteBlock and LowEnergyTransportBlock
+# Custom modules required:
+#   - SwinLiteBlock
+#   - LowEnergyTransportBlock
+
+nc: 3
+scale: s
+
+scales:
+  n: [0.50, 0.25, 1024]
+  s: [0.50, 0.50, 1024]
+  m: [0.50, 1.00, 512]
+  l: [1.00, 1.00, 512]
+  x: [1.00, 1.50, 512]
+
+backbone:
+  - [-1, 1, Conv, [64, 3, 2]]                     # 0  P1/2
+  - [-1, 1, Conv, [128, 3, 2]]                    # 1  P2/4
+  - [-1, 2, C3k2, [256, False, 0.25]]             # 2
+  - [-1, 1, Conv, [256, 3, 2]]                    # 3  P3/8
+  - [-1, 2, C3k2, [512, False, 0.25]]             # 4
+  - [-1, 1, Conv, [512, 3, 2]]                    # 5  P4/16
+  - [-1, 2, C3k2, [512, True]]                    # 6
+  - [-1, 1, Conv, [1024, 3, 2]]                   # 7  P5/32
+  - [-1, 2, C3k2, [1024, True]]                   # 8
+  - [-1, 1, SPPF, [1024, 5]]                      # 9
+  - [-1, 2, C2PSA, [1024]]                        # 10
+  - [-1, 1, SwinLiteBlock, [1024, 8, 7, 2.0]]     # 11  Swin after backbone
+
+head:
+  - [-1, 1, nn.Upsample, [None, 2, "nearest"]]    # 12
+  - [[-1, 6], 1, Concat, [1]]                      # 13
+  - [-1, 2, C3k2, [512, False]]                   # 14
+
+  - [-1, 1, nn.Upsample, [None, 2, "nearest"]]    # 15
+  - [[-1, 4], 1, Concat, [1]]                      # 16
+  - [-1, 2, C3k2, [256, False]]                   # 17
+  - [-1, 1, LowEnergyTransportBlock, [256, 3, 0.25]]  # 18  LETB on P3
+
+  - [-1, 1, Conv, [256, 3, 2]]                    # 19
+  - [[-1, 14], 1, Concat, [1]]                     # 20
+  - [-1, 2, C3k2, [512, False]]                   # 21
+  - [-1, 1, LowEnergyTransportBlock, [512, 3, 0.25]]  # 22  LETB on P4
+
+  - [-1, 1, Conv, [512, 3, 2]]                    # 23
+  - [[-1, 11], 1, Concat, [1]]                     # 24
+  - [-1, 2, C3k2, [1024, True]]                   # 25
+  - [-1, 1, LowEnergyTransportBlock, [1024, 3, 0.25]] # 26  LETB on P5
+
+  - [[18, 22, 26], 1, Detect, [nc]]               # 27

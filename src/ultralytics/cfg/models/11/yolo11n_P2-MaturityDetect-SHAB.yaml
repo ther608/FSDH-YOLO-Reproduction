@@ -1,0 +1,50 @@
+# YOLO11n + SHAB + MaturityDetect + P2/4 detection layer.
+# The four-scale P2-P5 head follows the public Ultralytics P2 model pattern.
+nc: 3
+maturity_targets: [0, 1, 2]
+maturity_lambda: 0.10
+maturity_variance_min: 0.0001
+maturity_variance_max: 100.0
+scale: n
+scales:
+  n: [0.50, 0.25, 1024]
+
+backbone:
+  - [-1, 1, Conv, [64, 3, 2]]
+  - [-1, 1, Conv, [128, 3, 2]]
+  - [-1, 2, C3k2, [256, False, 0.25]]              # P2/4
+  - [-1, 1, Conv, [256, 3, 2]]
+  - [-1, 2, C3k2, [512, False, 0.25]]
+  - [-1, 1, SHAB, []]                              # P3/8
+  - [-1, 1, Conv, [512, 3, 2]]
+  - [-1, 2, C3k2, [512, True]]
+  - [-1, 1, SHAB, []]                              # P4/16
+  - [-1, 1, Conv, [1024, 3, 2]]
+  - [-1, 2, C3k2, [1024, True]]
+  - [-1, 1, SPPF, [1024, 5]]
+  - [-1, 2, C2PSA, [1024]]
+  - [-1, 1, SHAB, []]                              # P5/32
+
+head:
+  - [-1, 1, nn.Upsample, [None, 2, "nearest"]]
+  - [[-1, 8], 1, Concat, [1]]
+  - [-1, 2, C3k2, [512, False]]                    # P4
+  - [-1, 1, nn.Upsample, [None, 2, "nearest"]]
+  - [[-1, 5], 1, Concat, [1]]
+  - [-1, 2, C3k2, [256, False]]                    # P3
+
+  - [-1, 1, nn.Upsample, [None, 2, "nearest"]]
+  - [[-1, 2], 1, Concat, [1]]
+  - [-1, 2, C3k2, [128, False]]                    # P2/4 tiny
+
+  - [-1, 1, Conv, [128, 3, 2]]
+  - [[-1, 19], 1, Concat, [1]]
+  - [-1, 2, C3k2, [256, False]]                    # P3/8
+  - [-1, 1, Conv, [256, 3, 2]]
+  - [[-1, 16], 1, Concat, [1]]
+  - [-1, 2, C3k2, [512, False]]                    # P4/16
+  - [-1, 1, Conv, [512, 3, 2]]
+  - [[-1, 13], 1, Concat, [1]]
+  - [-1, 2, C3k2, [1024, True]]                    # P5/32
+
+  - [[22, 25, 28, 31], 1, MaturityDetect, [nc]]

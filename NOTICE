@@ -1,0 +1,33 @@
+FSDH-YOLO Reproduction Materials
+
+This repository contains a modified copy of Ultralytics YOLO 8.4.11.
+
+Upstream:
+  https://github.com/ultralytics/ultralytics
+  License: GNU Affero General Public License v3.0 (AGPL-3.0)
+
+Modifications made for the FSDH-YOLO paper:
+  * Added FSDConv as the SPOConv class in
+    ultralytics/nn/modules/advanced.py (PixelUnshuffle + Conv-BN-SiLU).
+  * Added SHEB as the SHAB class in
+    ultralytics/nn/modules/small_object_modules.py
+    (local / mid-range / global-channel branches, residual fusion).
+  * Registered the new modules in ultralytics/nn/modules/__init__.py and
+    ultralytics/nn/tasks.py.
+  * Added the FSDH-YOLO and ablation/control model YAML files under
+    ultralytics/cfg/models/11/.
+  * Added paper-specific training and evaluation wrappers in train/ and eval/.
+
+The trained checkpoints in weights/ were produced by training the modified code
+on the two public litchi datasets described in the paper. They are distributed
+under the same AGPL-3.0 terms as the code.
+
+Appendix C files under results/Appendix_C/ were copied from
+https://github.com/ther608/FSDH-YOLO-Supplementary, which is MIT-licensed.
+A copy of that license is in LICENSES/FSDH-YOLO-Supplementary-MIT.txt.
+
+Datasets are not redistributed. Dataset A is the RGB subset of the public RGB-D
+lychee dataset of Zhang et al. (arXiv:2510.16800). Dataset B is the public
+lichi-maturity dataset of Zhao (Mendeley Data, doi:10.17632/c3rk9gv4w9.1).
+Users must obtain the datasets from their original sources and comply with the
+original licenses.

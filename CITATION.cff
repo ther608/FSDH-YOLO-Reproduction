@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+title: FSDH-YOLO Reproduction Materials
+message: "If you use this code or these weights, please cite the FSDH-YOLO paper and Ultralytics YOLO11."
+type: software
+authors:
+  - family-names: Chen
+    given-names: Dehua
+  - family-names: Wu
+    given-names: Haorong
+  - family-names: Li
+    given-names: Xiaoxiao
+  - family-names: Teng
+    given-names: Hao
+  - family-names: Yang
+    given-names: Junjie
+  - family-names: Teng
+    given-names: Zihan
+  - family-names: Liu
+    given-names: Yang
+repository-code: "https://github.com/ther608/FSDH-YOLO-Reproduction"
+license: AGPL-3.0
+year: 2026
+keywords:
+  - litchi maturity detection
+  - YOLO11
+  - object detection
+  - precision agriculture

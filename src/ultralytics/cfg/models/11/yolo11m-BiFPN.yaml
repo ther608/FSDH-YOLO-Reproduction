@@ -1,0 +1,50 @@
+# YOLO11m-BiFPN: YOLO11m with BiFPN-style weighted feature fusion.
+# Replaces standard Concat with BiFPNFusion (learnable ReLU-normalized
+# per-input scalar weights). 1x1 Conv aligns channels where needed.
+#
+# YAML args for BiFPNFusion: [dimension] — n_inputs is auto-detected from
+# the 'from' list length by parse_model.
+
+nc: 10
+scale: m
+scales:
+  m: [0.50, 1.00, 512]
+
+backbone:
+  - [-1, 1, Conv, [64, 3, 2]] # 0
+  - [-1, 1, Conv, [128, 3, 2]] # 1
+  - [-1, 2, C3k2, [256, False, 0.25]] # 2
+  - [-1, 1, Conv, [256, 3, 2]] # 3
+  - [-1, 2, C3k2, [512, False, 0.25]] # 4
+  - [-1, 1, Conv, [512, 3, 2]] # 5
+  - [-1, 2, C3k2, [512, True]] # 6
+  - [-1, 1, Conv, [1024, 3, 2]] # 7
+  - [-1, 2, C3k2, [1024, True]] # 8
+  - [-1, 1, SPPF, [1024, 5]] # 9
+  - [-1, 2, C2PSA, [1024]] # 10
+
+head:
+  # === FPN top-down ===
+  - [-1, 1, nn.Upsample, [None, 2, "nearest"]] # 11 (P5→512ch)
+  # P4: upsampled_P5(512ch) + backbone_P4(layer6, 512ch) — same channels
+  - [[-1, 6], 1, BiFPNFusion, [1]] # 12
+  - [-1, 2, C3k2, [512, False]] # 13 (P4_fpn: 512ch)
+
+  - [-1, 1, nn.Upsample, [None, 2, "nearest"]] # 14 (512ch)
+  # P3: upsampled_P4_fpn(512ch) + backbone_P3(layer4, 512ch) — same channels
+  - [[-1, 4], 1, BiFPNFusion, [1]] # 15
+  - [-1, 2, C3k2, [256, False]] # 16 (P3: 512→256ch)
+
+  # === PAN bottom-up ===
+  - [-1, 1, Conv, [256, 3, 2]] # 17 (256ch)
+  # Fuse downsampled_P3(256ch) + P4_fpn(layer13, 512ch): need channel align
+  - [13, 1, Conv, [256, 1, 1]] # 18: 1x1 on P4_fpn (512→256ch)
+  - [[17, 18], 1, BiFPNFusion, [1]] # 19 (both 256ch)
+  - [-1, 2, C3k2, [512, False]] # 20 (P4: 256→512ch)
+
+  - [-1, 1, Conv, [512, 3, 2]] # 21 (512ch)
+  # Fuse downsampled(512ch) + backbone_P5(layer10, 512ch) — same channels
+  - [[-1, 10], 1, BiFPNFusion, [1]] # 22
+  - [-1, 2, C3k2, [1024, True]] # 23 (P5: 512ch for m)
+
+  - [[16, 20, 23], 1, Detect, [nc]] # 24

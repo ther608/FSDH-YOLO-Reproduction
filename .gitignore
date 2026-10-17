@@ -1,0 +1,32 @@
+# Generated training/evaluation outputs
+runs/
+out/
+*.log
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.venv/
+venv/
+
+# Datasets (images are not redistributed)
+/datasets/
+data/*/images/
+data/*/labels/
+
+# Large local artifacts that should not be committed
+*.onnx
+*.tflite
+*.apk
+*.zip
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Local harness settings
+.claude/

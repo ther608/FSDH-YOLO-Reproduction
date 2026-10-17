@@ -1,0 +1,50 @@
+Data, documentation and results — CC BY 4.0
+============================================
+
+The following material in this repository is licensed under the
+Creative Commons Attribution 4.0 International License (CC BY 4.0):
+
+  - README.md
+  - docs/
+  - data/                 (split manifests, group manifests, cleaning logs,
+                           augmentation logs, build/audit summaries)
+  - results/              (paper tables, per-seed CSV, Common Evaluator JSON,
+                           bootstrap/area/confusion results, latency CSVs)
+  - annotations/          (COCO test annotations derived from the public datasets)
+
+You are free to share and adapt this material for any purpose, including
+commercially, provided you give appropriate credit, link to the license, and
+indicate whether changes were made.
+
+Full license text: https://creativecommons.org/licenses/by/4.0/legalcode
+
+Attribution should reference the manuscript and this repository, e.g.:
+
+  Chen, D., Wu, H., Li, X., Teng, H., Yang, J., Teng, Z., Liu, Y.,
+  "A Spatial-to-Depth Reorganization and Hierarchical Enhancement Network for
+  Litchi Maturity Detection in Natural Orchard Environments", reproduction
+  materials, https://github.com/ther608/FSDH-YOLO-Reproduction
+
+Scope and third-party content
+-----------------------------
+
+1. **Code and trained weights are not covered by this document.**
+   `src/`, `train/`, `eval/`, `configs/` and `weights/` are distributed under
+   the GNU Affero General Public License v3.0 (AGPL-3.0); see `LICENSE` and
+   `NOTICE`.
+
+2. **`results/Appendix_C/` is MIT-licensed**, copied from
+   https://github.com/ther608/FSDH-YOLO-Supplementary. See
+   `LICENSES/FSDH-YOLO-Supplementary-MIT.txt`.
+
+3. **Dataset images are not redistributed.**
+   Dataset A is the RGB subset of the public RGB-D lychee dataset of Zhang et al.
+   (arXiv:2510.16800). Dataset B is the public lichi-maturity dataset of Zhao
+   (Mendeley Data, doi:10.17632/c3rk9gv4w9.1). The split manifests, annotations
+   and derived statistics are provided for reproducibility; users must obtain
+   the images from the original sources and comply with the original dataset
+   licenses.
+
+4. **Annotations** are factual bounding-box/category metadata derived from the
+   public datasets. They are provided "as is" for reproducibility; no additional
+   warranty is made.

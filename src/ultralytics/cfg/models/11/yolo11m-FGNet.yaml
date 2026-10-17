@@ -1,0 +1,72 @@
+# Ultralytics AGPL-3.0 License - https://ultralytics.com/license
+
+# YOLO11m-FGNet: YOLO11m with Frequency-Gated Pyramid Feature Fusion
+# Replaces the standard FPN top-down path with FG-Net progressive fusion
+# while keeping the PAN bottom-up path for localization.
+#
+# FG-Net fusion differs from standard FPN:
+#   1. FFT-based frequency gating (FGNetBlock) per scale before fusion
+#   2. Element-wise addition (UpsampleAdd) instead of concatenation for
+#      skip connections — preserves channel count, avoids channel inflation
+#   3. Progressive top-down refinement: deep (P5) information flows into
+#      mid (P4), then the enriched mid flows into shallow (P3)
+#
+# Based on FG-Net (WACV 2024): "Facial Action Unit Detection with
+# Generalizable Pyramidal Features" by Yin et al.
+# Adapted for general object detection.
+#
+# Architecture:
+#   Backbone: YOLO11m (standard) → P3(index 4), P4(6), P5(10)
+#   Neck:    FGNetBlock per scale → progressive UpsampleAdd fusion
+#            → Standard PAN bottom-up
+#   Head:    YOLO11 Detect(P3, P4, P5)
+#
+# Model docs: https://docs.ultralytics.com/models/yolo11
+
+# Parameters
+nc: 80 # number of classes
+scale: m # force m scale
+scales: # model compound scaling constants
+  m: [0.50, 1.00, 512]
+
+# YOLO11m-FGNet backbone (standard YOLO11m)
+backbone:
+  # [from, repeats, module, args]
+  - [-1, 1, Conv, [64, 3, 2]] # 0-P1/2
+  - [-1, 1, Conv, [128, 3, 2]] # 1-P2/4
+  - [-1, 2, C3k2, [256, False, 0.25]] # 2
+  - [-1, 1, Conv, [256, 3, 2]] # 3-P3/8
+  - [-1, 2, C3k2, [512, False, 0.25]] # 4
+  - [-1, 1, Conv, [512, 3, 2]] # 5-P4/16
+  - [-1, 2, C3k2, [512, True]] # 6
+  - [-1, 1, Conv, [1024, 3, 2]] # 7-P5/32
+  - [-1, 2, C3k2, [1024, True]] # 8
+  - [-1, 1, SPPF, [1024, 5]] # 9
+  - [-1, 2, C2PSA, [1024]] # 10
+
+# FG-Net head: frequency-gated FPN + standard PAN
+head:
+  # === FG-Net FPN (top-down, progressive fusion) ===
+  # Step 1: Per-scale frequency gating via FGNetBlock
+  - [10, 1, FGNetBlock, [4]] # 11: P5_enh — deep semantic, FFT-gated
+  - [6, 1, FGNetBlock, [4]] # 12: P4_enh
+  - [4, 1, FGNetBlock, [4]] # 13: P3_enh — shallow detail, FFT-gated
+
+  # Step 2: Deep → Mid progressive fusion (element-wise addition, no concat)
+  - [[11, 12], 1, UpsampleAdd, []] # 14: P4_fused = up(P5_enh) + P4_enh
+  - [-1, 2, C3k2, [512, False]] # 15: P4_out (P4/16-medium)
+
+  # Step 3: Mid → Shallow progressive fusion (element-wise addition, no concat)
+  - [[15, 13], 1, UpsampleAdd, []] # 16: P3_fused = up(P4_out) + P3_enh
+  - [-1, 2, C3k2, [256, False]] # 17: P3_out (P3/8-small)
+
+  # === Standard PAN (bottom-up path) ===
+  - [-1, 1, Conv, [256, 3, 2]] # 18: downsample P3_out
+  - [[-1, 15], 1, Concat, [1]] # 19: cat down(P3) + P4_out
+  - [-1, 2, C3k2, [512, False]] # 20: P4/16-medium
+
+  - [-1, 1, Conv, [512, 3, 2]] # 21: downsample
+  - [[-1, 11], 1, Concat, [1]] # 22: cat down(P4) + P5_enh
+  - [-1, 2, C3k2, [1024, True]] # 23: P5/32-large
+
+  - [[17, 20, 23], 1, Detect, [nc]] # 24: Detect(P3, P4, P5)
